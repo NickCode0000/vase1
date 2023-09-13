@@ -1,4 +1,3 @@
-import java.time.LocalDate;
 import java.util.Scanner;
 
 
@@ -13,38 +12,23 @@ import java.util.Scanner;
 class Administration {
 
 
-    Persoon pierre= new Persoon(1, "Pierre", "van Puffelen");
-    Persoon kees= new Persoon(2, "Kees", "van der Spek");
-    Persoon jakop= new Persoon(3, "Jager", "Jakop");
-    Persoon Jasperr= new Persoon(3, "Jasper", "Bakker");
+    Persoon Lisa = new Persoon(71, "Lisa", "Jansen", 12, 11, 1994, 65, 170);
+    Persoon Thomas = new Persoon(14, "Thomas", "De Vries", 5, 6, 1988, 80, 185);
+    Persoon Sophia = new Persoon(32, "Sophia", "Peters", 21, 4, 1981, 70, 160);
+    Persoon Amir = new Persoon(19, "Amir", "Khan", 8, 12, 1998, 75, 175);
+    Persoon Elena = new Persoon(10, "Elena", "Petrov", 15, 4, 1992, 60, 165);
 
 
-    void allenamen(){
-        pierre.volnaam();
-        kees.volnaam();
-        jakop.volnaam();
-    }
-void huisarts() {
+    void allenamen() {
 
-    Scanner huisscan = new Scanner(System.in);
-    String huisantwoordt = "";
-
-    System.out.println("U bent succesvol geïdentificeerd als een: Huisarts");
-    System.out.println(" ");
-    System.out.println("Van welke patient zou u de gewenste gegevens willen inzien?");
-    System.out.println(" ");
-    allenamen();
-    System.out.println(" ");
-    System.out.print("Voer hier de id in: ");
-    huisantwoordt = huisscan.nextLine();
-
-
-    if (huisantwoordt.equals("1")){
-        pierre.gegevens();
+        Lisa.volnaam();
+        Thomas.volnaam();
+        Sophia.volnaam();
+        Amir.volnaam();
+        Elena.volnaam();
     }
 
 
-}
     void menu() {
 
 
@@ -63,19 +47,168 @@ void huisarts() {
 
         answer1 = scanner.nextLine();
         if (answer1.equals("a")) {
-            System.out.println("u bent succesvol geïdentificeerd als een: fysiotherapeut");
+            fysiotherapeut();
         }
         if (answer1.equals("b")) {
             huisarts();
         }
         if (answer1.equals("c")) {
-            System.out.println("u bent succesvol geïdentificeerd als een: Apotheker");
+            Apotheker();
         }
         if (answer1.equals("d")) {
-            System.out.println("u bent succesvol geïdentificeerd als een: Tandarts");
+            Tandarts();
         }
+    }
 
-    }}
+
+    void Apotheker() {
+        Scanner Aposcan = new Scanner(System.in);
+        String Apoantwoordt = "";
+
+        System.out.println("U bent succesvol geïdentificeerd als een: Apotheker");
+        System.out.println(" ");
+        System.out.println("Van welke patient zou u de gewenste gegevens willen inzien?");
+        System.out.println(" ");
+        allenamen();
+        System.out.println(" ");
+        System.out.print("Voer hier de id in: ");
+        Apoantwoordt = Aposcan.nextLine();
+
+
+        if (Apoantwoordt.equals("71")) {
+            System.out.println("\nHierbij de gegevens van Lisa\n");
+            Lisa.gegevens();
+        }
+        if (Apoantwoordt.equals("14")) {
+            System.out.println("\nHierbij de gegevens van Thomas\n");
+            Thomas.gegevens();
+        }
+        if (Apoantwoordt.equals("32")) {
+            System.out.println("\nHierbij de gegevens van Sophia\n");
+            Sophia.gegevens();
+        }
+        if (Apoantwoordt.equals("19")) {
+            System.out.println("\nHierbij de gegevens van Amir\n");
+            Amir.gegevens();
+        }
+        if (Apoantwoordt.equals("10")) {
+            System.out.println("\nHierbij de gegevens van Elena\n");
+            Elena.gegevens();
+        }
+    }
+
+    void fysiotherapeut() {
+        System.out.println("u bent succesvol geïdentificeerd als een: fysiotherapeut");
+        Scanner Fscan = new Scanner(System.in);
+        String Fantwoordt = "";
+
+        System.out.println("U bent succesvol geïdentificeerd als een: Huisarts");
+        System.out.println(" ");
+        System.out.println("Van welke patient zou u de gewenste gegevens willen inzien?");
+        System.out.println(" ");
+        allenamen();
+        System.out.println(" ");
+        System.out.print("Voer hier de id in: ");
+        Fantwoordt = Fscan.nextLine();
+
+        if (Fantwoordt.equals("71")) {
+            System.out.println("\nHierbij de gegevens van Lisa\n");
+            Lisa.gegevens();
+        }
+        if (Fantwoordt.equals("14")) {
+            System.out.println("\nHierbij de gegevens van Thomas\n");
+            Thomas.gegevens();
+        }
+        if (Fantwoordt.equals("32")) {
+            System.out.println("\nHierbij de gegevens van Sophia\n");
+            Sophia.gegevens();
+        }
+        if (Fantwoordt.equals("19")) {
+            System.out.println("\nHierbij de gegevens van Amir\n");
+            Amir.gegevens();
+        }
+        if (Fantwoordt.equals("10")) {
+            System.out.println("\nHierbij de gegevens van Elena\n");
+            Elena.gegevens();
+        }
+    }
+
+
+    void huisarts() {
+
+        Scanner huisscan = new Scanner(System.in);
+        String huisantwoordt = "";
+
+        System.out.println("U bent succesvol geïdentificeerd als een: Huisarts");
+        System.out.println(" ");
+        System.out.println("Van welke patient zou u de gewenste gegevens willen inzien?");
+        System.out.println(" ");
+        allenamen();
+        System.out.println(" ");
+        System.out.print("Voer hier de id in: ");
+        huisantwoordt = huisscan.nextLine();
+
+
+        if (huisantwoordt.equals("71")) {
+            System.out.println("\nHierbij de gegevens van Lisa\n");
+            Lisa.gegevens();
+        }
+        if (huisantwoordt.equals("14")) {
+            System.out.println("\nHierbij de gegevens van Thomas\n");
+            Thomas.gegevens();
+        }
+        if (huisantwoordt.equals("32")) {
+            System.out.println("\nHierbij de gegevens van Sophia\n");
+            Sophia.gegevens();
+        }
+        if (huisantwoordt.equals("19")) {
+            System.out.println("\nHierbij de gegevens van Amir\n");
+            Amir.gegevens();
+        }
+        if (huisantwoordt.equals("10")) {
+            System.out.println("\nHierbij de gegevens van Elena\n");
+            Elena.gegevens();
+        }
+    }
+
+
+    void Tandarts() {
+        Scanner Tscan = new Scanner(System.in);
+        String Tantwoordt = "";
+
+        System.out.println("U bent succesvol geïdentificeerd als een: Tandarts");
+        System.out.println(" ");
+        System.out.println("Van welke patient zou u de gewenste gegevens willen inzien?");
+        System.out.println(" ");
+        allenamen();
+        System.out.println(" ");
+        System.out.print("Voer hier de id in: ");
+        Tantwoordt = Tscan.nextLine();
+
+
+        if (Tantwoordt.equals("71")) {
+            System.out.println("\nHierbij de gegevens van Lisa\n");
+            Lisa.gegevens();
+        }
+        if (Tantwoordt.equals("14")) {
+            System.out.println("\nHierbij de gegevens van Thomas\n");
+            Thomas.gegevens();
+        }
+        if (Tantwoordt.equals("32")) {
+            System.out.println("\nHierbij de gegevens van Sophia\n");
+            Sophia.gegevens();
+        }
+        if (Tantwoordt.equals("19")) {
+            System.out.println("\nHierbij de gegevens van Amir\n");
+            Amir.gegevens();
+        }
+        if (Tantwoordt.equals("10")) {
+            System.out.println("\nHierbij de gegevens van Elena\n");
+            Elena.gegevens();
+        }
+    }
+}
+
 
 
 /*

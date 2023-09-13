@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Persoon {
   //static final int RETURN      = 0;
@@ -6,31 +7,52 @@ public class Persoon {
   // static final int ACHTERNAAM   = 2;
 //static final int DATEOFBIRTH = 3;
 
-   int       id;
-   String    voornaam;
-   String    achternaam;
-   //LocalDate dateOfBirth;
+   int          id;
+   String       voornaam;
+   String       achternaam;
+   //int        age;
+   LocalDate    dateOfBirth;
+   int          gewicht;
+   int          lengte;
+   //LocalDate today = LocalDate.now();
+    //int berekendeleeftijd = Period.between(dateOfBirth, today).getYears();
+
+
+
 
     /**
      * Constructor
      */
 
-     public Persoon(int id, String voornaam, String achternaam) {
+     public Persoon(int id, String voornaam, String achternaam,int day,int month,int year, int gewicht, int lengte) {
         this.id = id;
-        this.voornaam = voornaam;
-        this.achternaam = achternaam;
-        //this.dateOfBirth = dateOfBirth;
+        this.voornaam           = voornaam;
+        this.achternaam         = achternaam;
+        this.dateOfBirth        = LocalDate.of(year, month, day);
+        this.gewicht            = gewicht;
+        this.lengte             = lengte;
+        //this.berekendeleeftijd  = berekendeleeftijd;
+
+
     }
 
 void gegevens() {
-    System.out.println("Naam is:\t\t" + this.voornaam);
-    System.out.println("Achternaam is:\t\t" + this.achternaam);
-    //System.out.println("Achternaam is:\t" + this.dateOfBirth);
-}
+    System.out.println("id:\t\t" + this.id);
+    System.out.println("Naam:\t\t" + this.voornaam);
+    System.out.println("Achternaam:\t\t" + this.achternaam);
+    System.out.println("Geboortedatum:\t" + this.dateOfBirth);
+    System.out.println("Weegt:\t" + this.gewicht+" kg");
+    System.out.println("Lengte:\t" + this.lengte+" cm");
+     }
+    void gegevenshuisarts() {
+
+    }
+
+
 
 
 void volnaam(){
-    System.out.println(this.id +" "+ this.voornaam +" "+ this.achternaam);
+    System.out.println(this.id +":\t"+ this.voornaam +" "+ this.achternaam);
      }
 
 
