@@ -16,6 +16,7 @@ class Administration {
     Persoon pierre= new Persoon(1, "Pierre", "van Puffelen");
     Persoon kees= new Persoon(2, "Kees", "van der Spek");
     Persoon jakop= new Persoon(3, "Jager", "Jakop");
+    Persoon Jasper= new Persoon(3, "Jasper", "Bakker");
 
 
     void allenamen(){
