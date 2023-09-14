@@ -18,7 +18,25 @@ public class Persoon {
     //int berekendeleeftijd = Period.between(dateOfBirth, today).getYears();
 
 
+    public void setVoornaam(String voornaam) {
+        this.voornaam = voornaam;
+    }
 
+    public void setAchternaam(String achternaam) {
+        this.achternaam = achternaam;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public void setGewicht(int gewicht) {
+        this.gewicht = gewicht;
+    }
+
+    public void setLengte(int lengte) {
+        this.lengte = lengte;
+    }
 
     /**
      * Constructor
@@ -37,12 +55,12 @@ public class Persoon {
     }
 
 void gegevens() {
-    System.out.println("id:\t\t" + this.id);
-    System.out.println("Naam:\t\t" + this.voornaam);
+    System.out.println("id:\t\t\t\t" + this.id);
+    System.out.println("Naam:\t\t\t" + this.voornaam);
     System.out.println("Achternaam:\t\t" + this.achternaam);
     System.out.println("Geboortedatum:\t" + this.dateOfBirth);
-    System.out.println("Weegt:\t" + this.gewicht+" kg");
-    System.out.println("Lengte:\t" + this.lengte+" cm");
+    System.out.println("gewicht:\t\t" + this.gewicht+" kg");
+    System.out.println("Lengte:\t\t\t" + this.lengte+" cm");
      }
     void gegevenshuisarts() {
 

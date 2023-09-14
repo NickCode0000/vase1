@@ -1,3 +1,4 @@
+import java.sql.ClientInfoStatus;
 import java.util.Scanner;
 
 
@@ -153,25 +154,28 @@ class Administration {
             System.out.println("\nHierbij de gegevens van Lisa\n");
             Lisa.gegevens();
         }
-        if (huisantwoordt.equals("14")) {
+        else if (huisantwoordt.equals("14")) {
             System.out.println("\nHierbij de gegevens van Thomas\n");
             Thomas.gegevens();
         }
-        if (huisantwoordt.equals("32")) {
+        else if (huisantwoordt.equals("32")) {
             System.out.println("\nHierbij de gegevens van Sophia\n");
             Sophia.gegevens();
         }
-        if (huisantwoordt.equals("19")) {
+        else if (huisantwoordt.equals("19")) {
             System.out.println("\nHierbij de gegevens van Amir\n");
             Amir.gegevens();
         }
-        if (huisantwoordt.equals("10")) {
+        else if (huisantwoordt.equals("10")) {
             System.out.println("\nHierbij de gegevens van Elena\n");
             Elena.gegevens();
         }
     }
 
-
+    void setters(){
+        String nieweNaam = "jan";
+        Lisa.setVoornaam(nieweNaam);
+    }
     void Tandarts() {
         Scanner Tscan = new Scanner(System.in);
         String Tantwoordt = "";
