@@ -2,7 +2,8 @@ import java.time.LocalDate;
 import java.time.Period;
 
 public class Persoon {
-  //static final int RETURN      = 0;
+
+    //static final int RETURN      = 0;
   // static final int VOORNAAM     = 1;
   // static final int ACHTERNAAM   = 2;
 //static final int DATEOFBIRTH = 3;
@@ -52,6 +53,10 @@ public class Persoon {
         //this.berekendeleeftijd  = berekendeleeftijd;
 
 
+
+    }
+    public void bmiberekenen(){
+        System.out.println("BMI:\t\t\t\t"+this.gewicht/(this.lengte/100));
     }
 
 void gegevens() {

@@ -13,6 +13,7 @@ import java.util.Scanner;
 class Administration {
 
     String geidentificeerd = "U bent succesvol geïdentificeerd als een: ";
+    String gegvam = "\nHierbij de gegevens van: ";
 
 
     Persoon Lisa = new Persoon(71, "Lisa", "Jansen", 12, 11, 1994, 65, 170);
@@ -45,12 +46,11 @@ class Administration {
         var scanner = new Scanner(System.in);  // User input via this scanner.
         String answer1 = "";
 
-        System.out.println("Wat is uw expertise?: ");
+        System.out.println("\nWat is uw expertise?:\n");
         System.out.println("A: Fysio");
         System.out.println("B: Huisarts");
         System.out.println("C: Apotheker");
-        System.out.println("D: Tandarts");
-        System.out.println(" ");
+        System.out.println("D: Tandarts\n");
         System.out.print("Voer hier uw keuzen in: ");
         //int expertise = scanner.nextInt();
 
@@ -65,29 +65,30 @@ class Administration {
     void apotheker() {
         Scanner Aposcan = new Scanner(System.in);
         String Apoantwoordt = "";
-        System.out.println(geidentificeerd+"Apotheker\n");
+        System.out.println(geidentificeerd+"apotheker\n");
         Vraagblock();
         Apoantwoordt = Aposcan.nextLine();
 
         switch (Apoantwoordt) {
             case "71" -> {
-                System.out.println("\nHierbij de gegevens van Lisa\n");
+                System.out.println(gegvam+"Lisa\n");
                 Lisa.gegevens();
+                Lisa.bmiberekenen();
             }
             case "14" -> {
-                System.out.println("\nHierbij de gegevens van Thomas\n");
+                System.out.println(gegvam+"Thomas\n");
                 Thomas.gegevens();
             }
             case "32" -> {
-                System.out.println("\nHierbij de gegevens van Sophia\n");
+                System.out.println(gegvam+"Sophia\n");
                 Sophia.gegevens();
             }
             case "19" -> {
-                System.out.println("\nHierbij de gegevens van Amir\n");
+                System.out.println(gegvam+"Amir\n");
                 Amir.gegevens();
             }
             case "10" -> {
-                System.out.println("\nHierbij de gegevens van Elena\n");
+                System.out.println(gegvam+"Elena\n");
                 Elena.gegevens();
             }
         }
@@ -99,33 +100,28 @@ class Administration {
         String Fantwoordt = "";
 
         System.out.println(geidentificeerd+"fysiotherapeut\n");
-        System.out.println(" ");
-        System.out.println("Van welke patient zou u de gewenste gegevens willen inzien?");
-        System.out.println(" ");
-        allenamen();
-        System.out.println(" ");
-        System.out.print("Voer hier de id in: ");
+        Vraagblock();
         Fantwoordt = Fscan.nextLine();
 
         switch (Fantwoordt) {
             case "71" -> {
-                System.out.println("\nHierbij de gegevens van Lisa\n");
+                System.out.println(gegvam+"Lisa\n");
                 Lisa.gegevens();
             }
             case "14" -> {
-                System.out.println("\nHierbij de gegevens van Thomas\n");
+                System.out.println(gegvam+"Thomas\n");
                 Thomas.gegevens();
             }
             case "32" -> {
-                System.out.println("\nHierbij de gegevens van Sophia\n");
+                System.out.println(gegvam+"Sophia\n");
                 Sophia.gegevens();
             }
             case "19" -> {
-                System.out.println("\nHierbij de gegevens van Amir\n");
+                System.out.println(gegvam+"Amir\n");
                 Amir.gegevens();
             }
             case "10" -> {
-                System.out.println("\nHierbij de gegevens van Elena\n");
+                System.out.println(gegvam+"Elena\n");
                 Elena.gegevens();
             }
         }
@@ -138,33 +134,29 @@ class Administration {
         String huisantwoordt = "";
 
         System.out.println(geidentificeerd+"huisarts\n");
-        System.out.println("Van welke patient zou u de gewenste gegevens willen inzien?");
-        System.out.println(" ");
-        allenamen();
-        System.out.println(" ");
-        System.out.print("Voer hier de id in: ");
+        Vraagblock();
         huisantwoordt = huisscan.nextLine();
 
 
         switch (huisantwoordt) {
             case "71" -> {
-                System.out.println("\nHierbij de gegevens van Lisa\n");
+                System.out.println(gegvam+"Lisa\n");
                 Lisa.gegevens();
             }
             case "14" -> {
-                System.out.println("\nHierbij de gegevens van Thomas\n");
+                System.out.println(gegvam+"Thomas\n");
                 Thomas.gegevens();
             }
             case "32" -> {
-                System.out.println("\nHierbij de gegevens van Sophia\n");
+                System.out.println(gegvam+"Sophia\n");
                 Sophia.gegevens();
             }
             case "19" -> {
-                System.out.println("\nHierbij de gegevens van Amir\n");
+                System.out.println(gegvam+"Amir\n");
                 Amir.gegevens();
             }
             case "10" -> {
-                System.out.println("\nHierbij de gegevens van Elena\n");
+                System.out.println(gegvam+"Elena\n");
                 Elena.gegevens();
             }
         }
@@ -175,34 +167,29 @@ class Administration {
         String Tantwoordt = "";
 
         System.out.println(geidentificeerd+"tandarts\n");
-        System.out.println(" ");
-        System.out.println("Van welke patient zou u de gewenste gegevens willen inzien?");
-        System.out.println(" ");
-        allenamen();
-        System.out.println(" ");
-        System.out.print("Voer hier de id in: ");
+        Vraagblock();
         Tantwoordt = Tscan.nextLine();
 
 
         switch (Tantwoordt) {
             case "71"  -> {
-                System.out.println("\nHierbij de gegevens van Lisa\n");
+                System.out.println(gegvam+"Lisa\n");
                 Lisa.gegevens();
             }
             case "14" -> {
-                System.out.println("\nHierbij de gegevens van Thomas\n");
+                System.out.println(gegvam+"Thomas\n");
                 Thomas.gegevens();
             }
             case "32" -> {
-                System.out.println("\nHierbij de gegevens van Sophia\n");
+                System.out.println(gegvam+"Sophia\n");
                 Sophia.gegevens();
             }
             case "19" -> {
-                System.out.println("\nHierbij de gegevens van Amir\n");
+                System.out.println(gegvam+"Amir\n");
                 Amir.gegevens();
             }
             case "10" -> {
-                System.out.println("\nHierbij de gegevens van Elena\n");
+                System.out.println(gegvam+"Elena\n");
                 Elena.gegevens();
             }
         }
