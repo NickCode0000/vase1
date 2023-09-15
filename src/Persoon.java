@@ -15,8 +15,8 @@ public class Persoon {
    LocalDate    dateOfBirth;
    int          gewicht;
    int          lengte;
-   //LocalDate today = LocalDate.now();
-    //int berekendeleeftijd = Period.between(dateOfBirth, today).getYears();
+   LocalDate today = LocalDate.now();
+
 
 
     public void setVoornaam(String voornaam) {
@@ -51,11 +51,13 @@ public class Persoon {
         this.gewicht            = gewicht;
         this.lengte             = lengte;
         //this.berekendeleeftijd  = berekendeleeftijd;
-
-
-
     }
-    public void bmiberekenen(){
+    void berekenleeftijd(){
+        int berekendeleeftijd = Period.between(dateOfBirth, today).getYears();
+    }
+
+
+    void bmiberekenen(){
         System.out.println("BMI:\t\t\t\t"+this.gewicht/(this.lengte/100));
     }
 
