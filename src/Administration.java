@@ -1,4 +1,4 @@
-import java.sql.ClientInfoStatus;
+import java.time.LocalDate;
 import java.util.Scanner;
 
 
@@ -16,6 +16,7 @@ class Administration {
     String gegvam = "\nHierbij de gegevens van: ";
 
 
+
     Persoon Lisa = new Persoon(71, "Lisa", "Jansen", 12, 11, 1994, 65, 170);
     Persoon Thomas = new Persoon(14, "Thomas", "De Vries", 5, 6, 1988, 80, 185);
     Persoon Sophia = new Persoon(32, "Sophia", "Peters", 21, 4, 1981, 70, 160);
@@ -28,6 +29,19 @@ class Administration {
         String nieweNaam = "jan";
         Lisa.setVoornaam(nieweNaam);
     }
+    //void terug() {
+
+      //  var scanner = new Scanner(System.in);
+
+        //String antwoordT;
+
+        //antwoordT = scanner.nextLine();
+        //switch (antwoordT) {
+        //case "1"
+
+        //}
+
+
     void allenamen() {
         Lisa.volnaam();
         Thomas.volnaam();
@@ -73,7 +87,6 @@ class Administration {
             case "71" -> {
                 System.out.println(gegvam+"Lisa\n");
                 Lisa.gegevens();
-                Lisa.bmiberekenen();
             }
             case "14" -> {
                 System.out.println(gegvam+"Thomas\n");

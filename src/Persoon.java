@@ -16,6 +16,7 @@ public class Persoon {
    int          gewicht;
    int          lengte;
    LocalDate today = LocalDate.now();
+   int berekenleeftijd;
 
 
 
@@ -52,20 +53,15 @@ public class Persoon {
         this.lengte             = lengte;
         //this.berekendeleeftijd  = berekendeleeftijd;
     }
-    void berekenleeftijd(){
-        int berekendeleeftijd = Period.between(dateOfBirth, today).getYears();
-    }
-
-
-    void bmiberekenen(){
-        System.out.println("BMI:\t\t\t\t"+this.gewicht/(this.lengte/100));
-    }
+    void berekenleeftijd() {System.out.println("Leeftijd\t\t"+Period.between(this.dateOfBirth, today).getYears()+" jaar");}
+    void bmiberekenen() {System.out.println("BMI:\t\t\t"+this.gewicht/(this.lengte/100));}
 
 void gegevens() {
     System.out.println("id:\t\t\t\t" + this.id);
     System.out.println("Naam:\t\t\t" + this.voornaam);
     System.out.println("Achternaam:\t\t" + this.achternaam);
     System.out.println("Geboortedatum:\t" + this.dateOfBirth);
+    this.berekenleeftijd();
     System.out.println("gewicht:\t\t" + this.gewicht+" kg");
     System.out.println("Lengte:\t\t\t" + this.lengte+" cm");
      }
