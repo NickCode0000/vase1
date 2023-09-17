@@ -20,7 +20,7 @@ public class Persoon {
 
 
 
-    public void setVoornaam(String voornaam) {
+  /**  public void setVoornaam(String voornaam) {
         this.voornaam = voornaam;
     }
 
@@ -45,13 +45,12 @@ public class Persoon {
      */
 
      public Persoon(int id, String voornaam, String achternaam,int day,int month,int year, int gewicht, int lengte) {
-        this.id = id;
+        this.id                 = id;
         this.voornaam           = voornaam;
         this.achternaam         = achternaam;
         this.dateOfBirth        = LocalDate.of(year, month, day);
         this.gewicht            = gewicht;
         this.lengte             = lengte;
-        //this.berekendeleeftijd  = berekendeleeftijd;
     }
     void berekenleeftijd() {System.out.println("Leeftijd\t\t"+Period.between(this.dateOfBirth, today).getYears()+" jaar");}
     void bmiberekenen() {System.out.println("BMI:\t\t\t"+this.gewicht/(this.lengte/100));}
@@ -112,4 +111,12 @@ void volnaam(){
     //     persoon.add("Mazda");
     //     System.out.println(persoon);
     // }
+
+    public void editData(String NewName, String NewAchternaam){
+        this.voornaam           = NewName;
+        this.achternaam         = NewAchternaam;
+
+    }
+
 }
+

@@ -25,10 +25,10 @@ class Administration {
 
 
 
-    void setters() {
-        String nieweNaam = "jan";
-        Lisa.setVoornaam(nieweNaam);
-    }
+    //void setters() {
+     //   String nieweNaam = "jan";
+     //   Lisa.setVoornaam(nieweNaam);
+   // }
     //void terug() {
 
       //  var scanner = new Scanner(System.in);
