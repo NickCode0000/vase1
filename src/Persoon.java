@@ -8,15 +8,14 @@ public class Persoon {
     // static final int ACHTERNAAM   = 2;
 //static final int DATEOFBIRTH = 3;
 
-    int id;
-    String voornaam;
-    String achternaam;
-    //int        age;
-    LocalDate dateOfBirth;
-    int gewicht;
-    int lengte;
-    LocalDate today = LocalDate.now();
-    int berekenleeftijd;
+    int         id;
+    String      voornaam;
+    String      achternaam;
+    LocalDate   dateOfBirth;
+    float       gewicht;
+    float       lengte;
+    LocalDate   today = LocalDate.now();
+    int         berekenleeftijd;
 
 
     /**
@@ -45,30 +44,30 @@ public class Persoon {
      */
 
     public Persoon(int id, String voornaam, String achternaam, int day, int month, int year, int gewicht, int lengte) {
-        this.id = id;
-        this.voornaam = voornaam;
-        this.achternaam = achternaam;
-        this.dateOfBirth = LocalDate.of(year, month, day);
-        this.gewicht = gewicht;
-        this.lengte = lengte;
+        this.id             = id;
+        this.voornaam       = voornaam;
+        this.achternaam     = achternaam;
+        this.dateOfBirth    = LocalDate.of(year, month, day);
+        this.gewicht        = gewicht;
+        this.lengte         = lengte;
     }
 
-    void berekenleeftijd() {
-        System.out.println("Leeftijd\t\t" + Period.between(this.dateOfBirth, today).getYears() + " jaar");
-    }
+    void berekenleeftijd()
+    {System.out.println("Leeftijd\t\t" + Period.between(this.dateOfBirth, today).getYears() + " jaar");}
 
     void bmiberekenen() {
         System.out.println("BMI:\t\t\t" + this.gewicht / (this.lengte / 100));
     }
 
     void gegevens() {
-        System.out.println("id:\t\t\t\t" + this.id);
-        System.out.println("Naam:\t\t\t" + this.voornaam);
-        System.out.println("Achternaam:\t\t" + this.achternaam);
-        System.out.println("Geboortedatum:\t" + this.dateOfBirth);
-        this.berekenleeftijd();
-        System.out.println("gewicht:\t\t" + this.gewicht + " kg");
-        System.out.println("Lengte:\t\t\t" + this.lengte + " cm");
+        System.out.printf("%-15s %d\n",         "id:",                 id);
+        System.out.printf("%-15s %s\n",         "Naam:",               voornaam);
+        System.out.printf("%-15s %s\n",         "Achternaam:",         achternaam);
+        System.out.printf("%-15s %b\n",         "Geboortedatum:",      dateOfBirth);
+        System.out.printf("%-15s %d jaar\n",    "Leeftijd",            Period.between(dateOfBirth, today).getYears());
+        System.out.printf("%-15s %.1f\n",       "BMI:",                gewicht / (lengte / 100));
+        System.out.printf("%-15s %.0f kg\n",    "gewicht:",            gewicht);
+        System.out.printf("%-15s %.0f cm\n",    "Lengte:",             lengte);
     }
 
     void gegevenshuisarts() {
