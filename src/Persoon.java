@@ -107,10 +107,10 @@ public class Persoon {
     }
 
 
-    public void editName(String newVoornaam) {
+    public void editeName(String newVoornaam) {
         this.voornaam = newVoornaam;
     }
-    public void editAchternaam(String newAchternaam) {
+    public void editeAchternaam(String newAchternaam) {
         this.achternaam = newAchternaam;
     }
     public void editeDateOfBirth(int newYear, int newMonth, int newDay) {
@@ -122,10 +122,19 @@ public class Persoon {
     public void editeLengte(int newLengte) {
         this.lengte = newLengte;
     }
+
+
+
     public static void editeData(Persoon momenteelpersoon) {
         Scanner editeScan = new Scanner(System.in);
-        String scanwordt = "";
-        String naamantwoordt = "";
+        String scanwordt;
+        String naamantwoordt;
+        String AchternaamNaamantwoordt;
+        int geboorteDatumAntwoordt;
+        int geboorteDatumAntwoordt2;
+        int geboorteDatumAntwoordt3;
+        int lengteAntwoordt;
+        int gewichtAntwoordt;
 
         System.out.println("\nWelke gegevens wilt u aanpassen?");
         System.out.println("[1:Naam] [2:Achternaam] [3:Geboortedatum] [4:Gewicht] [5:Lengte]");
@@ -135,22 +144,50 @@ public class Persoon {
             case "1" -> {
                 System.out.print("\nVul hier de nieuwe naam in: ");
                 naamantwoordt = editeScan.nextLine();
-                momenteelpersoon.editName(naamantwoordt);
+                momenteelpersoon.editeName(naamantwoordt);
                 System.out.println("Naam is succesvol verandert naar: "+naamantwoordt);
-                System.out.println("hier komen de nieuwe gegevens");
+                System.out.println("hier komen de nieuwe gegevens\n");
                 momenteelpersoon.gegevens();
             }
             case "2" -> {
                 System.out.print("\nVul hier de nieuwe naam in: ");
-                naamantwoordt = editeScan.nextLine();
-                momenteelpersoon.editName(naamantwoordt);
-                System.out.println("Achternaam is succesvol verandert naar: "+naamantwoordt);
-                System.out.println("hier komen de nieuwe gegevens");
+                AchternaamNaamantwoordt = editeScan.nextLine();
+                momenteelpersoon.editeAchternaam(AchternaamNaamantwoordt);
+                System.out.println("Achternaam is succesvol verandert naar: "+AchternaamNaamantwoordt);
+                System.out.println("hier komen de nieuwe gegevens\n");
                 momenteelpersoon.gegevens();
             }
-            case "3" -> { }
-            case "4" -> { }
-            case "5" -> { }
+            case "3" -> {
+                System.out.print("\nVul hier nieuwe geboortejaar in: ");
+                geboorteDatumAntwoordt = editeScan.nextInt();
+
+                System.out.print("\nVul hier nieuwe geboortemaand in: ");
+                geboorteDatumAntwoordt2 = editeScan.nextInt();
+
+                System.out.print("\nVul hier nieuwe geboortedag in: ");
+                geboorteDatumAntwoordt3 = editeScan.nextInt();
+
+                momenteelpersoon.editeDateOfBirth(geboorteDatumAntwoordt, geboorteDatumAntwoordt2, geboorteDatumAntwoordt3);
+                System.out.printf("geboortedatum is succesvol verandert naar: %d/%d/%d",geboorteDatumAntwoordt, geboorteDatumAntwoordt2, geboorteDatumAntwoordt3);
+                System.out.println(" hier komen de nieuwe gegevens\n");
+                momenteelpersoon.gegevens();
+            }
+            case "4" -> {
+                System.out.print("\nVul hier de nieuwe gewicht in: ");
+                gewichtAntwoordt = editeScan.nextInt();
+                momenteelpersoon.editeGewicht(gewichtAntwoordt);
+                System.out.println("gewicht is succesvol verandert naar: "+gewichtAntwoordt);
+                System.out.println("hier komen de nieuwe gegevens\n");
+                momenteelpersoon.gegevens();
+            }
+            case "5" -> {
+                System.out.print("\nVul hier de nieuwe lengte in: ");
+                lengteAntwoordt = editeScan.nextInt();
+                momenteelpersoon.editeLengte(lengteAntwoordt);
+                System.out.println("lengte is succesvol verandert naar: "+lengteAntwoordt);
+                System.out.println("hier komen de nieuwe gegevens\n");
+                momenteelpersoon.gegevens();
+            }
         }
 
     }

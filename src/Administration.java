@@ -1,4 +1,3 @@
-import java.time.LocalDate;
 import java.util.Scanner;
 
 
@@ -42,7 +41,7 @@ class Administration {
         //}
 
 
-    void allenamen() {
+    void alleNamen() {
         Lisa.volnaam();
         Thomas.volnaam();
         Sophia.volnaam();
@@ -51,7 +50,7 @@ class Administration {
     }
     void Vraagblock(){
         System.out.println("Van welke patient zou u de gewenste gegevens willen inzien?\n");
-        allenamen();
+        alleNamen();
         System.out.print("\nVoer hier de id in: ");
     }
 
@@ -86,9 +85,6 @@ class Administration {
         switch (Apoantwoordt) {
             case "71" -> {
                 System.out.println(gegvam+"Lisa\n");
-                Lisa.gegevens();
-                Lisa.editName("Henk");
-                Lisa.gegevens();
                 Persoon.editeData(Lisa);
             }
             case "14" -> {
