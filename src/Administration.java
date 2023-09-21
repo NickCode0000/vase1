@@ -85,23 +85,28 @@ class Administration {
         switch (Apoantwoordt) {
             case "71" -> {
                 System.out.println(gegvam+"Lisa\n");
+                Lisa.gegevens();
                 Persoon.editeData(Lisa);
             }
             case "14" -> {
                 System.out.println(gegvam+"Thomas\n");
                 Thomas.gegevens();
+                Persoon.editeData(Thomas);
             }
             case "32" -> {
                 System.out.println(gegvam+"Sophia\n");
                 Sophia.gegevens();
+                Persoon.editeData(Sophia);
             }
             case "19" -> {
                 System.out.println(gegvam+"Amir\n");
                 Amir.gegevens();
+                Persoon.editeData(Amir);
             }
             case "10" -> {
                 System.out.println(gegvam+"Elena\n");
                 Elena.gegevens();
+                Persoon.editeData(Elena);
             }
         }
     }
@@ -119,22 +124,27 @@ class Administration {
             case "71" -> {
                 System.out.println(gegvam+"Lisa\n");
                 Lisa.gegevens();
+                Persoon.editeData(Lisa);
             }
             case "14" -> {
                 System.out.println(gegvam+"Thomas\n");
                 Thomas.gegevens();
+                Persoon.editeData(Thomas);
             }
             case "32" -> {
                 System.out.println(gegvam+"Sophia\n");
                 Sophia.gegevens();
+                Persoon.editeData(Sophia);
             }
             case "19" -> {
                 System.out.println(gegvam+"Amir\n");
                 Amir.gegevens();
+                Persoon.editeData(Amir);
             }
             case "10" -> {
                 System.out.println(gegvam+"Elena\n");
                 Elena.gegevens();
+                Persoon.editeData(Elena);
             }
         }
     }
@@ -154,22 +164,27 @@ class Administration {
             case "71" -> {
                 System.out.println(gegvam+"Lisa\n");
                 Lisa.gegevens();
+                Persoon.editeData(Lisa);
             }
             case "14" -> {
                 System.out.println(gegvam+"Thomas\n");
                 Thomas.gegevens();
+                Persoon.editeData(Thomas);
             }
             case "32" -> {
                 System.out.println(gegvam+"Sophia\n");
                 Sophia.gegevens();
+                Persoon.editeData(Sophia);
             }
             case "19" -> {
                 System.out.println(gegvam+"Amir\n");
                 Amir.gegevens();
+                Persoon.editeData(Amir);
             }
             case "10" -> {
                 System.out.println(gegvam+"Elena\n");
                 Elena.gegevens();
+                Persoon.editeData(Elena);
             }
         }
     }
@@ -187,22 +202,27 @@ class Administration {
             case "71"  -> {
                 System.out.println(gegvam+"Lisa\n");
                 Lisa.gegevens();
+                Persoon.editeData(Lisa);
             }
             case "14" -> {
                 System.out.println(gegvam+"Thomas\n");
                 Thomas.gegevens();
+                Persoon.editeData(Thomas);
             }
             case "32" -> {
                 System.out.println(gegvam+"Sophia\n");
                 Sophia.gegevens();
+                Persoon.editeData(Sophia);
             }
             case "19" -> {
                 System.out.println(gegvam+"Amir\n");
                 Amir.gegevens();
+                Persoon.editeData(Amir);
             }
             case "10" -> {
                 System.out.println(gegvam+"Elena\n");
                 Elena.gegevens();
+                Persoon.editeData(Elena);
             }
         }
     }

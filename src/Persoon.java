@@ -138,7 +138,7 @@ public class Persoon {
 
         System.out.println("\nWelke gegevens wilt u aanpassen?");
         System.out.println("[1:Naam] [2:Achternaam] [3:Geboortedatum] [4:Gewicht] [5:Lengte]");
-        System.out.print("Vul hier uw antwoordt in");
+        System.out.print("Vul hier uw antwoordt in: ");
         scanwordt = editeScan.nextLine();
         switch (scanwordt) {
             case "1" -> {
@@ -168,16 +168,16 @@ public class Persoon {
                 geboorteDatumAntwoordt3 = editeScan.nextInt();
 
                 momenteelpersoon.editeDateOfBirth(geboorteDatumAntwoordt, geboorteDatumAntwoordt2, geboorteDatumAntwoordt3);
-                System.out.printf("geboortedatum is succesvol verandert naar: %d/%d/%d",geboorteDatumAntwoordt, geboorteDatumAntwoordt2, geboorteDatumAntwoordt3);
-                System.out.println(" hier komen de nieuwe gegevens\n");
+                System.out.printf("Geboortedatum is succesvol verandert naar: %d/%d/%d",geboorteDatumAntwoordt, geboorteDatumAntwoordt2, geboorteDatumAntwoordt3);
+                System.out.println(" hier komen de nieuwe gegevens:\n");
                 momenteelpersoon.gegevens();
             }
             case "4" -> {
                 System.out.print("\nVul hier de nieuwe gewicht in: ");
                 gewichtAntwoordt = editeScan.nextInt();
                 momenteelpersoon.editeGewicht(gewichtAntwoordt);
-                System.out.println("gewicht is succesvol verandert naar: "+gewichtAntwoordt);
-                System.out.println("hier komen de nieuwe gegevens\n");
+                System.out.println("Gewicht is succesvol verandert naar: "+gewichtAntwoordt);
+                System.out.println("hier komen de nieuwe gegevens:\n");
                 momenteelpersoon.gegevens();
             }
             case "5" -> {
@@ -185,7 +185,7 @@ public class Persoon {
                 lengteAntwoordt = editeScan.nextInt();
                 momenteelpersoon.editeLengte(lengteAntwoordt);
                 System.out.println("lengte is succesvol verandert naar: "+lengteAntwoordt);
-                System.out.println("hier komen de nieuwe gegevens\n");
+                System.out.println("hier komen de nieuwe gegevens:\n");
                 momenteelpersoon.gegevens();
             }
         }
