@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Scanner;
 
 public class Persoon {
 
@@ -52,8 +53,9 @@ public class Persoon {
         this.lengte         = lengte;
     }
 
-    void berekenleeftijd()
-    {System.out.println("Leeftijd\t\t" + Period.between(this.dateOfBirth, today).getYears() + " jaar");}
+    void berekenleeftijd() {
+        System.out.println("Leeftijd\t\t" + Period.between(this.dateOfBirth, today).getYears() + " jaar");
+    }
 
     void bmiberekenen() {
         System.out.println("BMI:\t\t\t" + this.gewicht / (this.lengte / 100));
@@ -101,24 +103,62 @@ public class Persoon {
      * Shorthand for a Patient's full name
      */
     String fullName() {
-        return String.format("%s %s [%s]", voornaam, achternaam);
+        return String.format("%s %s", voornaam, achternaam);
     }
 
 
-    //   public static void main(String[] args){
-    //      ArrayList persoon = new ArrayList();
-    //     persoon.add(persoon1.fullName());
-    //     persoon.add("BMW");
-    //     persoon.add("Ford");
-    //     persoon.add("Mazda");
-    //     System.out.println(persoon);
-    // }
-
-    public void editData(String newName, String newAchternaam) {
-        this.voornaam = newName;
+    public void editName(String newVoornaam) {
+        this.voornaam = newVoornaam;
+    }
+    public void editAchternaam(String newAchternaam) {
         this.achternaam = newAchternaam;
-        
     }
+    public void editeDateOfBirth(int newYear, int newMonth, int newDay) {
+        this.dateOfBirth = LocalDate.of(newYear, newMonth, newDay);
+    }
+    public void editeGewicht(int newGewicht) {
+        this.gewicht = newGewicht;
+    }
+    public void editeLengte(int newLengte) {
+        this.lengte = newLengte;
+    }
+    public static void editeData(Persoon momenteelpersoon) {
+        Scanner editeScan = new Scanner(System.in);
+        String scanwordt = "";
+        String naamantwoordt = "";
+
+        System.out.println("\nWelke gegevens wilt u aanpassen?");
+        System.out.println("[1:Naam] [2:Achternaam] [3:Geboortedatum] [4:Gewicht] [5:Lengte]");
+        System.out.print("Vul hier uw antwoordt in");
+        scanwordt = editeScan.nextLine();
+        switch (scanwordt) {
+            case "1" -> {
+                System.out.print("\nVul hier de nieuwe naam in: ");
+                naamantwoordt = editeScan.nextLine();
+                momenteelpersoon.editName(naamantwoordt);
+                System.out.println("Naam is succesvol verandert naar: "+naamantwoordt);
+                System.out.println("hier komen de nieuwe gegevens");
+                momenteelpersoon.gegevens();
+            }
+            case "2" -> {
+                System.out.print("\nVul hier de nieuwe naam in: ");
+                naamantwoordt = editeScan.nextLine();
+                momenteelpersoon.editName(naamantwoordt);
+                System.out.println("Achternaam is succesvol verandert naar: "+naamantwoordt);
+                System.out.println("hier komen de nieuwe gegevens");
+                momenteelpersoon.gegevens();
+            }
+            case "3" -> { }
+            case "4" -> { }
+            case "5" -> { }
+        }
+
+    }
+
+
+
+
+
 
 }
 

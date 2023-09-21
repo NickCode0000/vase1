@@ -87,8 +87,9 @@ class Administration {
             case "71" -> {
                 System.out.println(gegvam+"Lisa\n");
                 Lisa.gegevens();
-                Lisa.editData("Henk","test");
+                Lisa.editName("Henk");
                 Lisa.gegevens();
+                Persoon.editeData(Lisa);
             }
             case "14" -> {
                 System.out.println(gegvam+"Thomas\n");
