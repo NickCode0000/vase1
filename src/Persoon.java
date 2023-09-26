@@ -80,7 +80,6 @@ public class Persoon {
     }
 
 
-
     public static void editeData(Persoon momenteelpersoon) {
         Scanner editeScan = new Scanner(System.in);
         String scanwordt;
@@ -147,7 +146,6 @@ public class Persoon {
         }
 
     }
-
 
 }
 

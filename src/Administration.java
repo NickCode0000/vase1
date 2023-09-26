@@ -12,7 +12,7 @@ import java.util.Scanner;
 class Administration {
 
     String geidentificeerd = "U bent succesvol geïdentificeerd als een: ";
-    String gegvam = "\nHierbij de gegevens van: ";
+    static String gegvam = "\nHierbij de gegevens van: ";
 
 
 
@@ -27,7 +27,7 @@ class Administration {
 
 
 
-    void terugknop(int beroep){
+    static void terugknop(int beroep){
 
         Scanner editeScan = new Scanner(System.in);
         String terugknop;
@@ -128,40 +128,20 @@ class Administration {
         Fantwoordt = Fscan.nextLine();
 
         switch (Fantwoordt) {
-            case "71" -> {
-                System.out.println(gegvam+"Lisa\n");
-                Lisa.gegevens();
-                Persoon.editeData(Lisa);
-                terugknop(1);
-            }
-            case "14" -> {
-                System.out.println(gegvam+"Thomas\n");
-                Thomas.gegevens();
-                Persoon.editeData(Thomas);
-                terugknop(1);
-
-            }
-            case "32" -> {
-                System.out.println(gegvam+"Sophia\n");
-                Sophia.gegevens();
-                Persoon.editeData(Sophia);
-                terugknop(1);
-            }
-            case "19" -> {
-                System.out.println(gegvam+"Amir\n");
-                Amir.gegevens();
-                Persoon.editeData(Amir);
-                terugknop(1);
-            }
-            case "10" -> {
-                System.out.println(gegvam+"Elena\n");
-                Elena.gegevens();
-                Persoon.editeData(Elena);
-                terugknop(1);
-            }
+            case "71" -> {spagettie(Lisa, "Lisa\n", 1);}
+            case "14" -> {spagettie(Thomas, "Thomas\n", 1);}
+            case "32" -> {spagettie(Sophia, "Sophia\n", 1);}
+            case "19" -> {spagettie(Amir, "Amir\n", 1);}
+            case "10" -> {spagettie(Elena, "Elena\n", 1);}
         }
     }
+    public void spagettie(Persoon momenteelpersoon, String naam, int knop){
 
+        System.out.println(gegvam+naam);
+        momenteelpersoon.gegevens();
+        Persoon.editeData(momenteelpersoon);
+        terugknop(knop);
+    }
 
     void huisarts() {
 
@@ -251,45 +231,3 @@ class Administration {
     }
 }
 
-
-
-/*
-        boolean nextCycle = true;
-        while (nextCycle) {
-            System.out.format("%s\n", "=".repeat(80));
-            System.out.format("Pierre van Puffelen: %s\n", currentPatient.fullName());
-            System.out.format("Kees van der Spek: %s\n", currentPatient2.fullName());
-            System.out.format("Jakop Jager: %s\n", currentPatient3.fullName());
-
-            /*
-             Print menu on screen
-            *
-
-
-
-            System.out.format("%d:  STOP\n", STOP);
-            System.out.format("%d:  View patient data\n", VIEW);
-            System.out.print("enter #choice: ");
-            int choice = scanner.nextInt();
-
-
-
-            switch (choice) {
-                case STOP: // interrupt the loop
-                    nextCycle = false;
-                    break;
-
-                case VIEW:
-                    currentPatient.viewData();
-                    currentPatient2.viewData();
-                    currentPatient3.viewData();
-                    break;
-
-                default:
-                    System.out.println("Please enter a *valid* digit");
-                    break;
-            }
-        }
-    }
-}
-*/
