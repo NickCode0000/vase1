@@ -58,7 +58,7 @@ public class Persoon {
     }
 
     void bmiberekenen() {
-        System.out.println("BMI:\t\t\t" + this.gewicht / (this.lengte / 100));
+        System.out.println("BMI:\t\t\t" + this.gewicht / (this.lengte / 100)+" kg/m²");
     }
 
     void gegevens() {
@@ -67,7 +67,7 @@ public class Persoon {
         System.out.printf("%-15s %s\n",         "Achternaam:",         achternaam);
         System.out.printf("%-15s %b\n",         "Geboortedatum:",      dateOfBirth);
         System.out.printf("%-15s %d jaar\n",    "Leeftijd",            Period.between(dateOfBirth, today).getYears());
-        System.out.printf("%-15s %.1f\n",       "BMI:",                gewicht / (lengte / 100));
+        System.out.printf("%-15s %.1f kg/m²\n", "BMI:",                gewicht / (lengte / 100));
         System.out.printf("%-15s %.0f kg\n",    "gewicht:",            gewicht);
         System.out.printf("%-15s %.0f cm\n",    "Lengte:",             lengte);
     }

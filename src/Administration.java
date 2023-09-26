@@ -40,6 +40,21 @@ class Administration {
 
         //}
 
+    void terugknop(int beroep){
+
+        Scanner editeScan = new Scanner(System.in);
+        String terugknop;
+
+        System.out.print("\nDruk op enter om een andere gebruiker te selecteren:");
+        terugknop = editeScan.nextLine();
+        System.out.print(" ");
+        if (terugknop.isEmpty()) {
+            if (beroep == 1){fysiotherapeut();}
+            if (beroep == 2){huisarts();}
+            if (beroep == 3){apotheker();}
+            if (beroep == 4){tandarts();}
+        }
+    }
 
     void alleNamen() {
         Lisa.volnaam();
@@ -87,26 +102,31 @@ class Administration {
                 System.out.println(gegvam+"Lisa\n");
                 Lisa.gegevens();
                 Persoon.editeData(Lisa);
+                terugknop(3);
             }
             case "14" -> {
                 System.out.println(gegvam+"Thomas\n");
                 Thomas.gegevens();
                 Persoon.editeData(Thomas);
+                terugknop(3);
             }
             case "32" -> {
                 System.out.println(gegvam+"Sophia\n");
                 Sophia.gegevens();
                 Persoon.editeData(Sophia);
+                terugknop(3);
             }
             case "19" -> {
                 System.out.println(gegvam+"Amir\n");
                 Amir.gegevens();
                 Persoon.editeData(Amir);
+                terugknop(3);
             }
             case "10" -> {
                 System.out.println(gegvam+"Elena\n");
                 Elena.gegevens();
                 Persoon.editeData(Elena);
+                terugknop(3);
             }
         }
     }
@@ -125,26 +145,32 @@ class Administration {
                 System.out.println(gegvam+"Lisa\n");
                 Lisa.gegevens();
                 Persoon.editeData(Lisa);
+                terugknop(1);
             }
             case "14" -> {
                 System.out.println(gegvam+"Thomas\n");
                 Thomas.gegevens();
                 Persoon.editeData(Thomas);
+                terugknop(1);
+
             }
             case "32" -> {
                 System.out.println(gegvam+"Sophia\n");
                 Sophia.gegevens();
                 Persoon.editeData(Sophia);
+                terugknop(1);
             }
             case "19" -> {
                 System.out.println(gegvam+"Amir\n");
                 Amir.gegevens();
                 Persoon.editeData(Amir);
+                terugknop(1);
             }
             case "10" -> {
                 System.out.println(gegvam+"Elena\n");
                 Elena.gegevens();
                 Persoon.editeData(Elena);
+                terugknop(1);
             }
         }
     }
@@ -165,26 +191,31 @@ class Administration {
                 System.out.println(gegvam+"Lisa\n");
                 Lisa.gegevens();
                 Persoon.editeData(Lisa);
+                terugknop(2);
             }
             case "14" -> {
                 System.out.println(gegvam+"Thomas\n");
                 Thomas.gegevens();
                 Persoon.editeData(Thomas);
+                terugknop(2);
             }
             case "32" -> {
                 System.out.println(gegvam+"Sophia\n");
                 Sophia.gegevens();
                 Persoon.editeData(Sophia);
+                terugknop(2);
             }
             case "19" -> {
                 System.out.println(gegvam+"Amir\n");
                 Amir.gegevens();
                 Persoon.editeData(Amir);
+                terugknop(2);
             }
             case "10" -> {
                 System.out.println(gegvam+"Elena\n");
                 Elena.gegevens();
                 Persoon.editeData(Elena);
+                terugknop(2);
             }
         }
     }
@@ -203,26 +234,31 @@ class Administration {
                 System.out.println(gegvam+"Lisa\n");
                 Lisa.gegevens();
                 Persoon.editeData(Lisa);
+                terugknop(4);
             }
             case "14" -> {
                 System.out.println(gegvam+"Thomas\n");
                 Thomas.gegevens();
                 Persoon.editeData(Thomas);
+                terugknop(4);
             }
             case "32" -> {
                 System.out.println(gegvam+"Sophia\n");
                 Sophia.gegevens();
                 Persoon.editeData(Sophia);
+                terugknop(4);
             }
             case "19" -> {
                 System.out.println(gegvam+"Amir\n");
                 Amir.gegevens();
                 Persoon.editeData(Amir);
+                terugknop(4);
             }
             case "10" -> {
                 System.out.println(gegvam+"Elena\n");
                 Elena.gegevens();
                 Persoon.editeData(Elena);
+                terugknop(4);
             }
         }
     }
