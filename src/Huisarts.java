@@ -1,2 +1,0 @@
-//class Huisarts extends User {
-

@@ -16,29 +16,16 @@ class Administration {
 
 
 
-    Persoon Lisa = new Persoon(71, "Lisa", "Jansen", 12, 11, 1994, 65, 170);
-    Persoon Thomas = new Persoon(14, "Thomas", "De Vries", 5, 6, 1988, 80, 185);
-    Persoon Sophia = new Persoon(32, "Sophia", "Peters", 21, 4, 1981, 70, 160);
-    Persoon Amir = new Persoon(19, "Amir", "Khan", 8, 12, 1998, 75, 175);
-    Persoon Elena = new Persoon(10, "Elena", "Petrov", 15, 4, 1992, 60, 165);
+    Persoon Lisa = new Persoon(71, "Lisa", "Jansen", 12, 11, 1994, 65, 170, medicatie.paracetamol);
+    Persoon Thomas = new Persoon(14, "Thomas", "De Vries", 5, 6, 1988, 80, 185, medicatie.aspirine);
+    Persoon Sophia = new Persoon(32, "Sophia", "Peters", 21, 4, 1981, 70, 160, medicatie.statines);
+    Persoon Amir = new Persoon(19, "Amir", "Khan", 8, 12, 1998, 75, 175, medicatie.lisinopril);
+    Persoon Elena = new Persoon(10, "Elena", "Petrov", 15, 4, 1992, 60, 165, medicatie.metformine);
 
 
 
-    //void setters() {
-     //   String nieweNaam = "jan";
-     //   Lisa.setVoornaam(nieweNaam);
-   // }
-    //void terug() {
 
-      //  var scanner = new Scanner(System.in);
 
-        //String antwoordT;
-
-        //antwoordT = scanner.nextLine();
-        //switch (antwoordT) {
-        //case "1"
-
-        //}
 
     void terugknop(int beroep){
 

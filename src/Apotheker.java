@@ -1,3 +1,0 @@
-//class Apotheker extends User {
-
-//}

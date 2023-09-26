@@ -17,40 +17,17 @@ public class Persoon {
     float       lengte;
     LocalDate   today = LocalDate.now();
     int         berekenleeftijd;
+    medicatie      medicatie;
 
 
-    /**
-     * public void setVoornaam(String voornaam) {
-     * this.voornaam = voornaam;
-     * }
-     * <p>
-     * public void setAchternaam(String achternaam) {
-     * this.achternaam = achternaam;
-     * }
-     * <p>
-     * public void setDateOfBirth(LocalDate dateOfBirth) {
-     * this.dateOfBirth = dateOfBirth;
-     * }
-     * <p>
-     * public void setGewicht(int gewicht) {
-     * this.gewicht = gewicht;
-     * }
-     * <p>
-     * public void setLengte(int lengte) {
-     * this.lengte = lengte;
-     * }
-     * <p>
-     * /**
-     * Constructor
-     */
-
-    public Persoon(int id, String voornaam, String achternaam, int day, int month, int year, int gewicht, int lengte) {
+    public Persoon(int id, String voornaam, String achternaam, int day, int month, int year, int gewicht, int lengte, medicatie medicatie) {
         this.id             = id;
         this.voornaam       = voornaam;
         this.achternaam     = achternaam;
         this.dateOfBirth    = LocalDate.of(year, month, day);
         this.gewicht        = gewicht;
         this.lengte         = lengte;
+        this.medicatie           = medicatie;
     }
 
     void berekenleeftijd() {
@@ -81,27 +58,6 @@ public class Persoon {
         System.out.println(this.id + ":\t" + this.voornaam + " " + this.achternaam);
     }
 
-
-//    String getvoornaam() {
-    //       return voornaam;
-    //   }
-    //   String getachternaam() {
-//return achternaam;
-    //  }
-
-    /**
-     * Display patient data.
-     */
-    // void viewData() {
-    // System.out.format("===== Patient id=%d ==============================\n", id);
-    // System.out.format("%-17s %s\n", "Surname:", voornaam);
-    // System.out.format("%-17s %s\n", "firstName:", achternaam);
-    //  System.out.format("%-17s %s\n", "Date of birth:", dateOfBirth);
-    // }
-
-    /**
-     * Shorthand for a Patient's full name
-     */
     String fullName() {
         return String.format("%s %s", voornaam, achternaam);
     }
@@ -191,10 +147,6 @@ public class Persoon {
         }
 
     }
-
-
-
-
 
 
 }
