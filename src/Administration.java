@@ -1,17 +1,9 @@
 import java.util.Scanner;
 
-
-/**
- * class Administration represents the core of the application by showing
- * the main menu, from where all other functionality is accessible, either
- * directly or via sub-menus.
- * An Administration instance needs a User as input, which is passed via the
- * constructor to the data member 'Nick'.
- * The patient data is available via the data member currentPatient.
- */
 class Administration {
 
-    String geidentificeerd = "U bent succesvol geïdentificeerd als een: ";
+
+    String geidentificeerd = "\nU bent succesvol geïdentificeerd als een: ";
     static String gegvam = "\nHierbij de gegevens van: ";
 
     private Persoon huidigPersoon;
@@ -23,11 +15,7 @@ class Administration {
     Persoon Elena = new Persoon(10, "Elena", "Petrov", 15, 4, 1992, 60, 165, medicatie.metformine);
 
 
-
-
-
-
-    void terugknop(int beroep){
+    void terugknop(int beroep) {
 
         Scanner editeScan = new Scanner(System.in);
         String terugknop;
@@ -36,10 +24,10 @@ class Administration {
         terugknop = editeScan.nextLine();
         System.out.print(" ");
         if (terugknop.isEmpty()) {
-            if (beroep == 1){fysiotherapeut();}
-            if (beroep == 2){huisarts();}
-            if (beroep == 3){apotheker();}
-            if (beroep == 4){tandarts();}
+            if (beroep == 1) {fysiotherapeut();}
+            if (beroep == 2) {huisarts();}
+            if (beroep == 3) {apotheker();}
+            if (beroep == 4) {tandarts();}
         }
     }
 
@@ -50,10 +38,15 @@ class Administration {
         Amir.volnaam();
         Elena.volnaam();
     }
-    void Vraagblock(){
+
+    void Vraagblock() {
         System.out.println("Van welke patient zou u de gewenste gegevens willen inzien?\n");
         alleNamen();
         System.out.print("\nVoer hier de id in: ");
+    }
+    public static void verwijderScherm(){
+        System.out.println("\n".repeat(100));
+        System.out.println("\n"+"=".repeat(250));
     }
 
     void menu() {
@@ -61,7 +54,10 @@ class Administration {
         var scanner = new Scanner(System.in);  // User input via this scanner.
         String answer1 = "";
 
-        System.out.println("\nWat is uw expertise?:\n");
+        verwijderScherm();
+        System.out.println("\n======================================");
+        System.out.println(  "=====   Wat is uw expertise?:   ======");
+        System.out.println(  "======================================\n");
         System.out.println("A: Fysio");
         System.out.println("B: Huisarts");
         System.out.println("C: Apotheker");
@@ -77,56 +73,38 @@ class Administration {
             case "d" -> tandarts();
         }
     }
-    void apotheker() {
-        Scanner Aposcan = new Scanner(System.in);
-        String Apoantwoordt = "";
-        System.out.println(geidentificeerd+"apotheker\n");
-        Vraagblock();
-        Apoantwoordt = Aposcan.nextLine();
 
-        switch (Apoantwoordt) {
-            case "71" -> {
-                System.out.println(gegvam+"Lisa\n");
-                Lisa.gegevens();
-                Persoon.editeData(Lisa);
-                terugknop(3);
-            }
-            case "14" -> {
-                System.out.println(gegvam+"Thomas\n");
-                Thomas.gegevens();
-                Persoon.editeData(Thomas);
-                terugknop(3);
-            }
-            case "32" -> {
-                System.out.println(gegvam+"Sophia\n");
-                Sophia.gegevens();
-                Persoon.editeData(Sophia);
-                terugknop(3);
-            }
-            case "19" -> {
-                System.out.println(gegvam+"Amir\n");
-                Amir.gegevens();
-                Persoon.editeData(Amir);
-                terugknop(3);
-            }
-            case "10" -> {
-                System.out.println(gegvam+"Elena\n");
-                Elena.gegevens();
-                Persoon.editeData(Elena);
-                terugknop(3);
-            }
-        }
+    void fysiotherapeut() {
+        huidigepassent();
+        printGegevensEdite(huidigPersoon, 1);
     }
-    void huidigepassent(){
+
+    void huisarts() {
+        huidigepassent();
+        printGegevensEdite(huidigPersoon, 2);
+    }
+
+    void apotheker() {
+        huidigepassent();
+        printGegevensEdite(huidigPersoon, 3);
+    }
+
+    void tandarts() {
+        huidigepassent();
+        printGegevensEdite(huidigPersoon, 4);
+    }
+
+    void huidigepassent() {
 
         Scanner Fscan = new Scanner(System.in);
-        String Fantwoordt = "";
+        String antwoordt = "";
 
-        System.out.println(geidentificeerd+"fysiotherapeut\n");
+        verwijderScherm();
+        System.out.println(geidentificeerd + "fysiotherapeut\n");
         Vraagblock();
-        Fantwoordt = Fscan.nextLine();
+        antwoordt = Fscan.nextLine();
 
-        switch (Fantwoordt) {
+        switch (antwoordt) {
             case "71" -> huidigPersoon = Lisa;
             case "14" -> huidigPersoon = Thomas;
             case "32" -> huidigPersoon = Sophia;
@@ -136,122 +114,13 @@ class Administration {
 
     }
 
-    void fysiotherapeut() {
-        huidigepassent();
-        printGegevens(huidigPersoon, 1);
 
+    public void printGegevensEdite(Persoon momenteelpersoon, int knop) {
 
-
-
-//
-//        Scanner Fscan = new Scanner(System.in);
-//        String Fantwoordt = "";
-//
-//        System.out.println(geidentificeerd+"fysiotherapeut\n");
-//        Vraagblock();
-//        Fantwoordt = Fscan.nextLine();
-//
-//        switch (Fantwoordt) {
-//            case "71" -> {spagettie(Lisa, "Lisa\n", 1);}
-//            case "14" -> {spagettie(Thomas, "Thomas\n", 1);}
-//            case "32" -> {spagettie(Sophia, "Sophia\n", 1);}
-//            case "19" -> {spagettie(Amir, "Amir\n", 1);}
-//            case "10" -> {spagettie(Elena, "Elena\n", 1);}
-//        }
-    }
-    public void printGegevens(Persoon momenteelpersoon, int knop){
-
-        System.out.println(gegvam+momenteelpersoon.voornaam);
+        verwijderScherm();
+        System.out.println(gegvam + momenteelpersoon.voornaam);
         momenteelpersoon.gegevens();
-        Persoon.editeData(momenteelpersoon);
+        Persoon.PersoonEditor.editeData(momenteelpersoon);
         terugknop(knop);
     }
-
-    void huisarts() {
-
-        Scanner huisscan = new Scanner(System.in);
-        String huisantwoordt = "";
-
-        System.out.println(geidentificeerd+"huisarts\n");
-        Vraagblock();
-        huisantwoordt = huisscan.nextLine();
-
-
-        switch (huisantwoordt) {
-            case "71" -> {
-                System.out.println(gegvam+"Lisa\n");
-                Lisa.gegevens();
-                Persoon.editeData(Lisa);
-                terugknop(2);
-            }
-            case "14" -> {
-                System.out.println(gegvam+"Thomas\n");
-                Thomas.gegevens();
-                Persoon.editeData(Thomas);
-                terugknop(2);
-            }
-            case "32" -> {
-                System.out.println(gegvam+"Sophia\n");
-                Sophia.gegevens();
-                Persoon.editeData(Sophia);
-                terugknop(2);
-            }
-            case "19" -> {
-                System.out.println(gegvam+"Amir\n");
-                Amir.gegevens();
-                Persoon.editeData(Amir);
-                terugknop(2);
-            }
-            case "10" -> {
-                System.out.println(gegvam+"Elena\n");
-                Elena.gegevens();
-                Persoon.editeData(Elena);
-                terugknop(2);
-            }
-        }
-    }
-
-    void tandarts() {
-        Scanner Tscan = new Scanner(System.in);
-        String Tantwoordt = "";
-
-        System.out.println(geidentificeerd+"tandarts\n");
-        Vraagblock();
-        Tantwoordt = Tscan.nextLine();
-
-
-        switch (Tantwoordt) {
-            case "71"  -> {
-                System.out.println(gegvam+"Lisa\n");
-                Lisa.gegevens();
-                Persoon.editeData(Lisa);
-                terugknop(4);
-            }
-            case "14" -> {
-                System.out.println(gegvam+"Thomas\n");
-                Thomas.gegevens();
-                Persoon.editeData(Thomas);
-                terugknop(4);
-            }
-            case "32" -> {
-                System.out.println(gegvam+"Sophia\n");
-                Sophia.gegevens();
-                Persoon.editeData(Sophia);
-                terugknop(4);
-            }
-            case "19" -> {
-                System.out.println(gegvam+"Amir\n");
-                Amir.gegevens();
-                Persoon.editeData(Amir);
-                terugknop(4);
-            }
-            case "10" -> {
-                System.out.println(gegvam+"Elena\n");
-                Elena.gegevens();
-                Persoon.editeData(Elena);
-                terugknop(4);
-            }
-        }
-    }
 }
-
