@@ -14,7 +14,7 @@ class Administration {
     String geidentificeerd = "U bent succesvol geïdentificeerd als een: ";
     static String gegvam = "\nHierbij de gegevens van: ";
 
-
+    private Persoon huidigPersoon;
 
     Persoon Lisa = new Persoon(71, "Lisa", "Jansen", 12, 11, 1994, 65, 170, medicatie.paracetamol);
     Persoon Thomas = new Persoon(14, "Thomas", "De Vries", 5, 6, 1988, 80, 185, medicatie.aspirine);
@@ -27,7 +27,7 @@ class Administration {
 
 
 
-    static void terugknop(int beroep){
+    void terugknop(int beroep){
 
         Scanner editeScan = new Scanner(System.in);
         String terugknop;
@@ -117,8 +117,7 @@ class Administration {
             }
         }
     }
-
-    void fysiotherapeut() {
+    void huidigepassent(){
 
         Scanner Fscan = new Scanner(System.in);
         String Fantwoordt = "";
@@ -128,16 +127,41 @@ class Administration {
         Fantwoordt = Fscan.nextLine();
 
         switch (Fantwoordt) {
-            case "71" -> {spagettie(Lisa, "Lisa\n", 1);}
-            case "14" -> {spagettie(Thomas, "Thomas\n", 1);}
-            case "32" -> {spagettie(Sophia, "Sophia\n", 1);}
-            case "19" -> {spagettie(Amir, "Amir\n", 1);}
-            case "10" -> {spagettie(Elena, "Elena\n", 1);}
+            case "71" -> huidigPersoon = Lisa;
+            case "14" -> huidigPersoon = Thomas;
+            case "32" -> huidigPersoon = Sophia;
+            case "19" -> huidigPersoon = Amir;
+            case "10" -> huidigPersoon = Elena;
         }
-    }
-    public void spagettie(Persoon momenteelpersoon, String naam, int knop){
 
-        System.out.println(gegvam+naam);
+    }
+
+    void fysiotherapeut() {
+        huidigepassent();
+        printGegevens(huidigPersoon, 1);
+
+
+
+
+//
+//        Scanner Fscan = new Scanner(System.in);
+//        String Fantwoordt = "";
+//
+//        System.out.println(geidentificeerd+"fysiotherapeut\n");
+//        Vraagblock();
+//        Fantwoordt = Fscan.nextLine();
+//
+//        switch (Fantwoordt) {
+//            case "71" -> {spagettie(Lisa, "Lisa\n", 1);}
+//            case "14" -> {spagettie(Thomas, "Thomas\n", 1);}
+//            case "32" -> {spagettie(Sophia, "Sophia\n", 1);}
+//            case "19" -> {spagettie(Amir, "Amir\n", 1);}
+//            case "10" -> {spagettie(Elena, "Elena\n", 1);}
+//        }
+    }
+    public void printGegevens(Persoon momenteelpersoon, int knop){
+
+        System.out.println(gegvam+momenteelpersoon.voornaam);
         momenteelpersoon.gegevens();
         Persoon.editeData(momenteelpersoon);
         terugknop(knop);
