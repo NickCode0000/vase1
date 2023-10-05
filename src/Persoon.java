@@ -115,8 +115,8 @@ public class Persoon {
             String nieuweNaam = scanner.nextLine();
             momenteelpersoon.editeName(nieuweNaam);
             System.out.println("Naam is succesvol veranderd naar: " + nieuweNaam);
-            printNieuweGegevens(momenteelpersoon);
             Administration.verwijderScherm();
+            printNieuweGegevens(momenteelpersoon);
         }
 
         private static void editeAchternaam(Persoon momenteelpersoon) {
@@ -127,7 +127,6 @@ public class Persoon {
             System.out.println("Achternaam is succesvol veranderd naar: " + nieuweAchternaam);
             Administration.verwijderScherm();
             printNieuweGegevens(momenteelpersoon);
-
         }
 
         private static void editeGeboortedatum(Persoon momenteelpersoon) {
