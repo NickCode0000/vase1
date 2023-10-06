@@ -7,6 +7,7 @@ public class Persoon {
 
     int id;
     int berekenleeftijd;
+    int dose;
     float gewicht;
     float lengte;
     String voornaam;
@@ -15,7 +16,7 @@ public class Persoon {
     LocalDate today = LocalDate.now();
     medicatie medicatie;
 
-    public Persoon(int id, String voornaam, String achternaam, int day, int month, int year, int gewicht, int lengte, medicatie medicatie) {
+    public Persoon(int id, String voornaam, String achternaam, int day, int month, int year, int gewicht, int lengte, medicatie medicatie,int dose) {
         this.id = id;
         this.voornaam = voornaam;
         this.achternaam = achternaam;
@@ -23,6 +24,7 @@ public class Persoon {
         this.gewicht = gewicht;
         this.lengte = lengte;
         this.medicatie = medicatie;
+        this.dose = dose;
     }
 
     void berekenleeftijd() {
@@ -37,7 +39,7 @@ public class Persoon {
         System.out.printf("%-15s %s\n",         "Achternaam:", achternaam);
         System.out.printf("%-15s %b\n",         "Geboortedatum:", dateOfBirth);
         System.out.printf("%-15s %d jaar\n",    "Leeftijd", Period.between(dateOfBirth, today).getYears());
-        System.out.printf("%-15s %s\n",         "medicatie:", medicatie);
+        System.out.printf("%-15s %s %d mg\n",         "medicatie:", medicatie, dose);
         System.out.printf("%-15s %.1f kg/m²\n", "BMI:", gewicht / (lengte / 100));
         System.out.printf("%-15s %.0f kg\n",    "gewicht:", gewicht);
         System.out.printf("%-15s %.0f cm\n",    "Lengte:", lengte);

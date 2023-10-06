@@ -8,11 +8,11 @@ class Administration {
 
     private Persoon huidigPersoon;
 
-    Persoon Lisa = new Persoon(71, "Lisa", "Jansen", 12, 11, 1994, 65, 170, medicatie.paracetamol);
-    Persoon Thomas = new Persoon(14, "Thomas", "De Vries", 5, 6, 1988, 80, 185, medicatie.aspirine);
-    Persoon Sophia = new Persoon(32, "Sophia", "Peters", 21, 4, 1981, 70, 160, medicatie.statines);
-    Persoon Amir = new Persoon(19, "Amir", "Khan", 8, 12, 1998, 75, 175, medicatie.lisinopril);
-    Persoon Elena = new Persoon(10, "Elena", "Petrov", 15, 4, 1992, 60, 165, medicatie.metformine);
+    Persoon Lisa = new Persoon(71, "Lisa", "Jansen", 12, 11, 1994, 65, 170, medicatie.paracetamol, 150);
+    Persoon Thomas = new Persoon(14, "Thomas", "De Vries", 5, 6, 1988, 80, 185, medicatie.aspirine, 100);
+    Persoon Sophia = new Persoon(32, "Sophia", "Peters", 21, 4, 1981, 70, 160, medicatie.statines, 200);
+    Persoon Amir = new Persoon(19, "Amir", "Khan", 8, 12, 1998, 75, 175, medicatie.lisinopril, 500);
+    Persoon Elena = new Persoon(10, "Elena", "Petrov", 15, 4, 1992, 60, 165, medicatie.metformine, 250);
 
 
     void terugknop(int beroep) {
