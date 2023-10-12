@@ -98,6 +98,7 @@ public class Persoon {
                 case "5" -> editeLengte(momenteelpersoon);
                 default -> System.out.println("Ongeldige keuze.");
             }
+            printNieuweGegevens(momenteelpersoon);
         }
 
         private static void editeNaam(Persoon momenteelpersoon) {
@@ -109,8 +110,6 @@ public class Persoon {
             momenteelpersoon.editeName(nieuweNaam);
 
             System.out.println("Naam is succesvol veranderd naar: " + nieuweNaam);
-
-                printNieuweGegevens(momenteelpersoon);
         }
 
         private static void editeAchternaam(Persoon momenteelpersoon) {
@@ -122,8 +121,6 @@ public class Persoon {
             momenteelpersoon.editeAchternaam(nieuweAchternaam);
 
             System.out.println("Achternaam is succesvol veranderd naar: " + nieuweAchternaam);
-
-                printNieuweGegevens(momenteelpersoon);
         }
 
         private static void editeGeboortedatum(Persoon momenteelpersoon) {
@@ -141,8 +138,6 @@ public class Persoon {
             momenteelpersoon.editeDateOfBirth(jaar, maand, dag);
 
             System.out.printf("Geboortedatum is succesvol veranderd naar: %d/%d/%d%n", jaar, maand, dag);
-
-                printNieuweGegevens(momenteelpersoon);
         }
 
         private static void editeGewicht(Persoon momenteelpersoon) {
@@ -154,8 +149,6 @@ public class Persoon {
             momenteelpersoon.editeGewicht(nieuwGewicht);
 
             System.out.println("Gewicht is succesvol veranderd naar: " + nieuwGewicht);
-
-                printNieuweGegevens(momenteelpersoon);
         }
 
         private static void editeLengte(Persoon momenteelpersoon) {
@@ -167,8 +160,6 @@ public class Persoon {
             momenteelpersoon.editeLengte(nieuweLengte);
 
             System.out.println("Lengte is succesvol veranderd naar: " + nieuweLengte);
-
-                printNieuweGegevens(momenteelpersoon);
         }
 
         private static void printNieuweGegevens(Persoon momenteelpersoon) {
