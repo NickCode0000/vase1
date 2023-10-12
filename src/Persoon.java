@@ -39,7 +39,7 @@ public class Persoon {
         System.out.printf("%-15s %s\n",         "Achternaam:", achternaam);
         System.out.printf("%-15s %b\n",         "Geboortedatum:", dateOfBirth);
         System.out.printf("%-15s %d jaar\n",    "Leeftijd", Period.between(dateOfBirth, today).getYears());
-        System.out.printf("%-15s %s %d mg\n",         "medicatie:", medicatie, dose);
+        System.out.printf("%-15s %s %d mg\n",   "medicatie:", medicatie, dose);
         System.out.printf("%-15s %.1f kg/m²\n", "BMI:", gewicht / (lengte / 100));
         System.out.printf("%-15s %.0f kg\n",    "gewicht:", gewicht);
         System.out.printf("%-15s %.0f cm\n",    "Lengte:", lengte);
@@ -91,81 +91,88 @@ public class Persoon {
             scanwordt = editeScan.nextLine();
 
             switch (scanwordt) {
-                case "1":
-                    editeNaam(momenteelpersoon);
-                    break;
-                case "2":
-                    editeAchternaam(momenteelpersoon);
-                    break;
-                case "3":
-                    editeGeboortedatum(momenteelpersoon);
-                    break;
-                case "4":
-                    editeGewicht(momenteelpersoon);
-                    break;
-                case "5":
-                    editeLengte(momenteelpersoon);
-                    break;
-                default:
-                    System.out.println("Ongeldige keuze.");
+                case "1" -> editeNaam(momenteelpersoon);
+                case "2" -> editeAchternaam(momenteelpersoon);
+                case "3" -> editeGeboortedatum(momenteelpersoon);
+                case "4" -> editeGewicht(momenteelpersoon);
+                case "5" -> editeLengte(momenteelpersoon);
+                default -> System.out.println("Ongeldige keuze.");
             }
         }
 
         private static void editeNaam(Persoon momenteelpersoon) {
             Scanner scanner = new Scanner(System.in);
+
             System.out.print("\nVul hier de nieuwe naam in: ");
             String nieuweNaam = scanner.nextLine();
+
             momenteelpersoon.editeName(nieuweNaam);
+
             System.out.println("Naam is succesvol veranderd naar: " + nieuweNaam);
-            Administration.verwijderScherm();
-            printNieuweGegevens(momenteelpersoon);
+
+                printNieuweGegevens(momenteelpersoon);
         }
 
         private static void editeAchternaam(Persoon momenteelpersoon) {
             Scanner scanner = new Scanner(System.in);
+
             System.out.print("\nVul hier de nieuwe achternaam in: ");
             String nieuweAchternaam = scanner.nextLine();
+
             momenteelpersoon.editeAchternaam(nieuweAchternaam);
+
             System.out.println("Achternaam is succesvol veranderd naar: " + nieuweAchternaam);
-            Administration.verwijderScherm();
-            printNieuweGegevens(momenteelpersoon);
+
+                printNieuweGegevens(momenteelpersoon);
         }
 
         private static void editeGeboortedatum(Persoon momenteelpersoon) {
             Scanner scanner = new Scanner(System.in);
+
             System.out.print("\nVul hier het nieuwe geboortejaar in: ");
             int jaar = scanner.nextInt();
+
             System.out.print("Vul hier de nieuwe geboortemaand in: ");
             int maand = scanner.nextInt();
+
             System.out.print("Vul hier de nieuwe geboortedag in: ");
             int dag = scanner.nextInt();
+
             momenteelpersoon.editeDateOfBirth(jaar, maand, dag);
+
             System.out.printf("Geboortedatum is succesvol veranderd naar: %d/%d/%d%n", jaar, maand, dag);
-            Administration.verwijderScherm();
-            printNieuweGegevens(momenteelpersoon);
+
+                printNieuweGegevens(momenteelpersoon);
         }
 
         private static void editeGewicht(Persoon momenteelpersoon) {
             Scanner scanner = new Scanner(System.in);
+
             System.out.print("\nVul hier het nieuwe gewicht in: ");
             int nieuwGewicht = scanner.nextInt();
+
             momenteelpersoon.editeGewicht(nieuwGewicht);
+
             System.out.println("Gewicht is succesvol veranderd naar: " + nieuwGewicht);
-            Administration.verwijderScherm();
-            printNieuweGegevens(momenteelpersoon);
+
+                printNieuweGegevens(momenteelpersoon);
         }
 
         private static void editeLengte(Persoon momenteelpersoon) {
             Scanner scanner = new Scanner(System.in);
+
             System.out.print("\nVul hier de nieuwe lengte in: ");
             int nieuweLengte = scanner.nextInt();
+
             momenteelpersoon.editeLengte(nieuweLengte);
+
             System.out.println("Lengte is succesvol veranderd naar: " + nieuweLengte);
-            Administration.verwijderScherm();
-            printNieuweGegevens(momenteelpersoon);
+
+                printNieuweGegevens(momenteelpersoon);
         }
 
         private static void printNieuweGegevens(Persoon momenteelpersoon) {
+            Administration.verwijderScherm();
             System.out.println("Hier komen de nieuwe gegevens:\n");
             momenteelpersoon.gegevens();
         }

@@ -71,6 +71,7 @@ class Administration {
             case "b" -> huisarts();
             case "c" -> apotheker();
             case "d" -> tandarts();
+
         }
     }
 
