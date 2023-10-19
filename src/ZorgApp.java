@@ -3,7 +3,8 @@ class ZorgApp {
         User user = new User(1, "Mart ElCamera");
         Administration administration = new Administration();
 
-        administration.menu();
+        Grafiek.gr();
+        //administration.menu();
 
 
 

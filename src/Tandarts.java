@@ -1,3 +1,0 @@
-//class Tandarts extends User {
-
-//}
