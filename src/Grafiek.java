@@ -45,7 +45,7 @@ public class Grafiek {
     static void forumuleGrafiek() {
 
         int proefbmi;
-        proefbmi =45;
+        proefbmi =30;
 
         if (proefbmi < 18.5)
         {System.out.println("U heeft ondergewicht");}
