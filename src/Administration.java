@@ -6,7 +6,7 @@ class Administration {
     String geidentificeerd = "\nU bent succesvol geïdentificeerd als een: ";
     static String gegvam = "\nHierbij de gegevens van: ";
 
-    private Persoon huidigPersoon;
+    private static Persoon huidigPersoon;
 
     Persoon Lisa = new Persoon(71, "Lisa", "Jansen", 12, 11, 1994, 65, 170, medicatie.paracetamol, 150);
     Persoon Thomas = new Persoon(14, "Thomas", "De Vries", 5, 6, 1988, 80, 185, medicatie.aspirine, 100);
@@ -129,23 +129,25 @@ class Administration {
         Persoon.PersoonEditor.editeData(momenteelpersoon);
         terugknop(knop);
     }
-     void bmiStatus() {
+     static void bmiStatus() {
 
+        verwijderScherm();
         double bmi;
-        bmi = huidigPersoon.gewicht / (huidigPersoon.lengte / 100);
+        bmi = huidigPersoon.gewicht / ((huidigPersoon.lengte / 100)*(huidigPersoon.lengte / 100));
 
         if (bmi < 18.5)
-        {System.out.println("U heeft ondergewicht");}
+        {System.out.println("U heeft ondergewicht:\n");}
 
         else if (bmi > 18.5 && bmi < 24.9)
-        {System.out.println("U heeft een gezond gewicht");}
+        {System.out.println("U heeft een gezond gewicht:\n");}
 
         else if (bmi > 25.0 && bmi < 29.9)
-        {System.out.println("U heeft overgewicht");}
+        {System.out.println("U heeft overgewicht:\n");}
 
         else if (bmi > 30)
-        {System.out.println("U heeft obesitas");}
+        {System.out.println("U heeft obesitas:\n");}
 
         Grafiek.gr(bmi);
+
     }
 }
