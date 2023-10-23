@@ -124,4 +124,22 @@ class Administration {
         Persoon.PersoonEditor.editeData(momenteelpersoon);
         terugknop(knop);
     }
+     void bmiStatus() {
+
+        double bmi;
+        bmi = huidigPersoon.gewicht / (huidigPersoon.lengte / 100);
+
+        if (bmi < 18.5)
+        {System.out.println("U heeft ondergewicht");}
+
+        else if (bmi > 18.5 && bmi < 24.9)
+        {System.out.println("U heeft een gezond gewicht");}
+
+        else if (bmi > 25.0 && bmi < 29.9)
+        {System.out.println("U heeft overgewicht");}
+
+        else if (bmi > 30)
+        {System.out.println("U heeft obesitas");}
+
+    }
 }
