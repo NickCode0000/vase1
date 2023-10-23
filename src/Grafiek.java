@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Grafiek {
 
 
-    static void gr() {
+    public static void gr(double bmi) {
 
 
         ArrayList<String> showGrafiek =
@@ -55,7 +55,7 @@ public class Grafiek {
         showGrafiek.add("🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟨🟨🟨🟨🟩🟩🟩🟩🟩🟩🟨🟨🟨🟨🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥⬛");
 
 
-        System.out.println(showGrafiek.get(5));
+        System.out.println(showGrafiek.get((int) bmi));
 
 
     }

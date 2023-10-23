@@ -53,6 +53,7 @@ class Administration {
 
         var scanner = new Scanner(System.in);  // User input via this scanner.
         String answer1 = "";
+        String answer2 = "";
 
         verwijderScherm();
         System.out.println("\n======================================");
@@ -71,7 +72,11 @@ class Administration {
             case "b" -> huisarts();
             case "c" -> apotheker();
             case "d" -> tandarts();
-
+            default -> {System.out.println("Onjuist invoer (mogelijk gebruikt u een hooftletter) druk op enter om opnieuw te proberen: ");
+                answer2 = scanner.nextLine();
+                if (answer2.isEmpty()) {
+                    menu();}
+            }
         }
     }
 
@@ -141,5 +146,6 @@ class Administration {
         else if (bmi > 30)
         {System.out.println("U heeft obesitas");}
 
+        Grafiek.gr(bmi);
     }
 }

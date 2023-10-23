@@ -57,7 +57,6 @@ public class Persoon {
         return String.format("%s %s", voornaam, achternaam);
     }
 
-
     public void editeName(String newVoornaam) {
         this.voornaam = newVoornaam;
     }
