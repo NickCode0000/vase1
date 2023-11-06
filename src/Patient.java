@@ -1,19 +1,16 @@
 import java.time.LocalDate;
-import java.time.Period;
 import java.util.Scanner;
 
 public class Patient {
 
 
     int id;
-    int berekenleeftijd;
     int dose;
     float gewicht;
     float lengte;
     String voornaam;
     String achternaam;
     LocalDate dateOfBirth;
-    LocalDate today = LocalDate.now();
     medicatie medicatie;
 
     public Patient(int id, String voornaam, String achternaam, int day, int month, int year, int gewicht, int lengte, medicatie medicatie, int dose) {
@@ -27,36 +24,10 @@ public class Patient {
         this.dose = dose;
     }
 
-    void berekenleeftijd() {
-        System.out.println("Leeftijd\t\t" + Period.between(this.dateOfBirth, today).getYears() + " jaar");
-    }
-
-    void bmiberekenen() {System.out.println("BMI:\t\t\t" + this.gewicht / (this.lengte / 100) + " kg/m²");}
-
-//     void printGegevens() {
-//       System.out.printf("%-15s %d\n",         "id:", id);
-//       System.out.printf("%-15s %s\n",         "Naam:", voornaam);
-//        System.out.printf("%-15s %s\n",         "Achternaam:", achternaam);
-//       System.out.printf("%-15s %b\n",         "Geboortedatum:", dateOfBirth);
-//       System.out.printf("%-15s %d jaar\n",    "Leeftijd", Period.between(dateOfBirth, today).getYears());
-//
-////       System.out.printf("%-15s %s %d mg\n", "medicatie:", this.medicatie, this.dose);
-////       System.out.printf("%-15s %.1f kg/m²\n", "BMI:", this.gewicht / ((this.lengte / 100) * (this.lengte / 100)));
-////       System.out.printf("%-15s %.0f kg\n", "gewicht:", this.gewicht);
-////       System.out.printf("%-15s %.0f cm\n", "Lengte:", this.lengte);
-//   }
-
-    void gegevenshuisarts() {
-
-    }
-
     void volnaam() {
         System.out.println(this.id + ":\t" + this.voornaam + " " + this.achternaam);
     }
 
-    String fullName() {
-        return String.format("%s %s", voornaam, achternaam);
-    }
 
     public void editeName(String newVoornaam) {
         this.voornaam = newVoornaam;
@@ -79,9 +50,9 @@ public class Patient {
     }
 
 
-    public class PatientEditor {
+    public static class PatientEditor {
 
-        public static void editeData(Patient huidigPatient) {
+        public static void editeData(Patient huidigPatient, String huidigZorgverlener) {
             Scanner editeScan = new Scanner(System.in);
             String scanwordt;
 
@@ -91,18 +62,17 @@ public class Patient {
             scanwordt = editeScan.nextLine();
 
             switch (scanwordt) {
-                case "1" -> editeNaam(huidigPatient);
-                case "2" -> editeAchternaam(huidigPatient);
-                case "3" -> editeGeboortedatum(huidigPatient);
-                case "4" -> editeGewicht(huidigPatient);
-                case "5" -> editeLengte(huidigPatient);
+                case "1" -> editeNaam(huidigPatient, huidigZorgverlener);
+                case "2" -> editeAchternaam(huidigPatient, huidigZorgverlener);
+                case "3" -> editeGeboortedatum(huidigPatient, huidigZorgverlener);
+                case "4" -> editeGewicht(huidigPatient, huidigZorgverlener);
+                case "5" -> editeLengte(huidigPatient, huidigZorgverlener);
                 case "6" -> Administration.bmiStatus();
                 default -> System.out.println("Ongeldige keuze.");
             }
-
         }
 
-        private static void editeNaam(Patient huidigPatient) {
+        private static void editeNaam(Patient huidigPatient, String huidigZorgverlener) {
             Scanner scanner = new Scanner(System.in);
 
             System.out.print("\nVul hier de nieuwe naam in: ");
@@ -111,10 +81,10 @@ public class Patient {
             huidigPatient.editeName(nieuweNaam);
 
             System.out.println("Naam is succesvol veranderd naar: " + nieuweNaam);
-            printNieuweGegevens(huidigPatient);
+            printNieuweGegevens(huidigPatient, huidigZorgverlener);
         }
 
-        private static void editeAchternaam(Patient huidigPatient) {
+        private static void editeAchternaam(Patient huidigPatient, String huidigZorgverlener) {
             Scanner scanner = new Scanner(System.in);
 
             System.out.print("\nVul hier de nieuwe achternaam in: ");
@@ -123,10 +93,10 @@ public class Patient {
             huidigPatient.editeAchternaam(nieuweAchternaam);
 
             System.out.println("Achternaam is succesvol veranderd naar: " + nieuweAchternaam);
-            printNieuweGegevens(huidigPatient);
+            printNieuweGegevens(huidigPatient, huidigZorgverlener);
         }
 
-        private static void editeGeboortedatum(Patient huidigPatient) {
+        private static void editeGeboortedatum(Patient huidigPatient, String huidigZorgverlener) {
             Scanner scanner = new Scanner(System.in);
 
             System.out.print("\nVul hier het nieuwe geboortejaar in: ");
@@ -141,10 +111,10 @@ public class Patient {
             huidigPatient.editeDateOfBirth(jaar, maand, dag);
 
             System.out.printf("Geboortedatum is succesvol veranderd naar: %d/%d/%d%n", jaar, maand, dag);
-            printNieuweGegevens(huidigPatient);
+            printNieuweGegevens(huidigPatient, huidigZorgverlener);
         }
 
-        private static void editeGewicht(Patient huidigPatient) {
+        private static void editeGewicht(Patient huidigPatient, String huidigZorgverlener) {
             Scanner scanner = new Scanner(System.in);
 
             System.out.print("\nVul hier het nieuwe gewicht in: ");
@@ -153,10 +123,10 @@ public class Patient {
             huidigPatient.editeGewicht(nieuwGewicht);
 
             System.out.println("Gewicht is succesvol veranderd naar: " + nieuwGewicht);
-            printNieuweGegevens(huidigPatient);
+            printNieuweGegevens(huidigPatient, huidigZorgverlener);
         }
 
-        private static void editeLengte(Patient huidigPatient) {
+        private static void editeLengte(Patient huidigPatient, String huidigZorgverlener) {
             Scanner scanner = new Scanner(System.in);
 
             System.out.print("\nVul hier de nieuwe lengte in: ");
@@ -165,14 +135,32 @@ public class Patient {
             huidigPatient.editeLengte(nieuweLengte);
 
             System.out.println("Lengte is succesvol veranderd naar: " + nieuweLengte);
-            printNieuweGegevens(huidigPatient);
+            printNieuweGegevens(huidigPatient, huidigZorgverlener);
         }
 
-        private static void printNieuweGegevens(Patient huidigPatient) {
+        private static void printNieuweGegevens(Patient huidigPatient, String huidigZorgverlener) {
             Administration.verwijderScherm();
             System.out.println("Hier komen de nieuwe gegevens:\n");
-//            Hulpverleners.printGegevens();
 
+
+            switch (huidigZorgverlener){
+                case "Fysiotherapeut" -> {
+                    Fysiotherapeut fysiotherapeut = new Fysiotherapeut(huidigPatient);
+                    fysiotherapeut.printPatientGegevens();
+                }
+                case "Huisarts" -> {
+                    Huisarts huisarts = new Huisarts(huidigPatient);
+                    huisarts.printPatientGegevens();
+                }
+                case "Apotheker" -> {
+                    Apotheker apotheker = new Apotheker(huidigPatient);
+                    apotheker.printPatientGegevens();
+                }
+                case "Tandarts" -> {
+                    Tandarts tandarts = new Tandarts(huidigPatient);
+                    tandarts.printPatientGegevens();
+                }
+            }
         }
     }
 }

@@ -4,17 +4,8 @@ import java.time.Period;
 public class Hulpverleners {
 
     protected Patient huidigPatient;
-
-    int id;
-    int berekenleeftijd;
-    int dose;
-    float gewicht;
-    float lengte;
-    String voornaam;
-    String achternaam;
-    LocalDate dateOfBirth;
     LocalDate today = LocalDate.now();
-    medicatie medicatie;
+
 
     public Hulpverleners(Patient huidigPatient) {
         this.huidigPatient = huidigPatient;

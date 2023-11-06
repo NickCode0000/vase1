@@ -52,8 +52,8 @@ class Administration {
     void menu() {
 
         var scanner = new Scanner(System.in);  // User input via this scanner.
-        String answer1 = "";
-        String answer2 = "";
+        String answer1;
+        String answer2;
 
         verwijderScherm();
         System.out.println("\n======================================");
@@ -84,9 +84,9 @@ class Administration {
         patientSelect("Fysiotherapeut");
         Fysiotherapeut fysiotherapeut = new Fysiotherapeut(huidigPatient);
 
-        printGegevensEdite(huidigPatient, 1);
+        printGegevensEdite(huidigPatient);
         fysiotherapeut.printPatientGegevens();
-        printGegevens(huidigPatient, 1);
+        printGegevens(huidigPatient, 1, "Fysiotherapeut");
     }
 
     void huisarts() {
@@ -94,18 +94,18 @@ class Administration {
         patientSelect("Huisarts");
         Huisarts huisarts = new Huisarts(huidigPatient); // omdat huisarts niet static is en niet kan worden moet je het op deze manier aanpakken
 
-        printGegevensEdite(huidigPatient, 2);
+        printGegevensEdite(huidigPatient);
         huisarts.printPatientGegevens();
-        printGegevens(huidigPatient, 2);
+        printGegevens(huidigPatient, 2, "Huisarts");
     }
 
     void apotheker() {
         patientSelect("Apotheker");
         Apotheker apotheker = new Apotheker(huidigPatient);
 
-        printGegevensEdite(huidigPatient, 3);
+        printGegevensEdite(huidigPatient);
         apotheker.printPatientGegevens();
-        printGegevens(huidigPatient, 3);
+        printGegevens(huidigPatient, 3, "Apotheker");
 
     }
 
@@ -113,15 +113,15 @@ class Administration {
         patientSelect("Tandarts");
         Tandarts tandarts = new Tandarts(huidigPatient);
 
-        printGegevensEdite(Administration.huidigPatient, 4);
+        printGegevensEdite(Administration.huidigPatient);
         tandarts.printPatientGegevens();
-        printGegevens(huidigPatient, 4);
+        printGegevens(huidigPatient, 4, "Tandarts");
     }
 
     void patientSelect(String functie) {
 
         Scanner Fscan = new Scanner(System.in);
-        String antwoordt = "";
+        String antwoordt;
 
         verwijderScherm();
         System.out.println(geidentificeerd + functie);
@@ -140,15 +140,15 @@ class Administration {
     }
 
 
-    public void printGegevensEdite(Patient huidigPatient, int knop) {
+    public void printGegevensEdite(Patient huidigPatient) {
 
         verwijderScherm();
         System.out.println(gegvam + huidigPatient.voornaam);
 
     }
-    public void printGegevens(Patient huidigPatient, int knop) {
+    public void printGegevens(Patient huidigPatient, int knop, String huidigZorgverlener) {
 
-        Patient.PatientEditor.editeData(huidigPatient);
+        Patient.PatientEditor.editeData(huidigPatient, huidigZorgverlener);
         terugknop(knop);
     }
      static void bmiStatus() {
