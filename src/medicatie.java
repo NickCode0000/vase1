@@ -1,4 +1,5 @@
-public enum medicatie {
+public enum
+medicatie {
     paracetamol,
     aspirine,
     statines,

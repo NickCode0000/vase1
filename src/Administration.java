@@ -6,13 +6,13 @@ class Administration {
     String geidentificeerd = "\nU bent succesvol geïdentificeerd als een: ";
     static String gegvam = "\nHierbij de gegevens van: ";
 
-    private static Persoon huidigPersoon;
+    private static Patient huidigPatient;
 
-    Persoon Lisa = new Persoon(71, "Lisa", "Jansen", 12, 11, 1994, 65, 170, medicatie.paracetamol, 150);
-    Persoon Thomas = new Persoon(14, "Thomas", "De Vries", 5, 6, 1988, 80, 185, medicatie.aspirine, 100);
-    Persoon Sophia = new Persoon(32, "Sophia", "Peters", 21, 4, 1981, 70, 160, medicatie.statines, 200);
-    Persoon Amir = new Persoon(19, "Amir", "Khan", 8, 12, 1998, 75, 175, medicatie.lisinopril, 500);
-    Persoon Elena = new Persoon(10, "Elena", "Petrov", 15, 4, 1992, 60, 165, medicatie.metformine, 250);
+    Patient Lisa = new Patient(71, "Lisa", "Jansen", 12, 11, 1994, 65, 170, medicatie.paracetamol, 150);
+    Patient Thomas = new Patient(14, "Thomas", "De Vries", 5, 6, 1988, 80, 185, medicatie.aspirine, 100);
+    Patient Sophia = new Patient(32, "Sophia", "Peters", 21, 4, 1981, 70, 160, medicatie.statines, 200);
+    Patient Amir = new Patient(19, "Amir", "Khan", 8, 12, 1998, 75, 175, medicatie.lisinopril, 500);
+    Patient Elena = new Patient(10, "Elena", "Petrov", 15, 4, 1992, 60, 165, medicatie.metformine, 250);
 
 
     void terugknop(int beroep) {
@@ -81,59 +81,65 @@ class Administration {
     }
 
     void fysiotherapeut() {
-        huidigepassent();
-        printGegevensEdite(huidigPersoon, 1);
+        huidigepassent("Fysiotherapeut");
+        printGegevensEdite(huidigPatient, 1);
     }
 
     void huisarts() {
-        huidigepassent();
-        printGegevensEdite(huidigPersoon, 2);
+        huidigepassent("Huisarts");
+        printGegevensEdite(huidigPatient, 2);
     }
 
     void apotheker() {
-        huidigepassent();
-        printGegevensEdite(huidigPersoon, 3);
+        huidigepassent("Apotheker");
+        printGegevensEdite(huidigPatient, 3);
     }
 
     void tandarts() {
-        huidigepassent();
-        printGegevensEdite(huidigPersoon, 4);
+        huidigepassent("Tandarts");
+        printGegevensEdite(Administration.huidigPatient, 4);
+        Tandarts.printGegevens();
     }
 
-    void huidigepassent() {
+    void huidigepassent(String functie) {
 
         Scanner Fscan = new Scanner(System.in);
         String antwoordt = "";
 
         verwijderScherm();
-        System.out.println(geidentificeerd + "fysiotherapeut\n");
+        System.out.println(geidentificeerd + functie);
         Vraagblock();
         antwoordt = Fscan.nextLine();
 
         switch (antwoordt) {
-            case "71" -> huidigPersoon = Lisa;
-            case "14" -> huidigPersoon = Thomas;
-            case "32" -> huidigPersoon = Sophia;
-            case "19" -> huidigPersoon = Amir;
-            case "10" -> huidigPersoon = Elena;
+            case "71" -> huidigPatient = Lisa;
+            case "14" -> huidigPatient = Thomas;
+            case "32" -> huidigPatient = Sophia;
+            case "19" -> huidigPatient = Amir;
+            case "10" -> huidigPatient = Elena;
         }
 
     }
 
 
-    public void printGegevensEdite(Persoon momenteelpersoon, int knop) {
+    public void printGegevensEdite(Patient huidigPatient, int knop) {
 
         verwijderScherm();
-        System.out.println(gegvam + momenteelpersoon.voornaam);
-        momenteelpersoon.gegevens();
-        Persoon.PersoonEditor.editeData(momenteelpersoon);
+        System.out.println(gegvam + huidigPatient.voornaam);
+      huidigPatient.printGegevens();
+
+    }
+    public void printGegevens(Patient huidigPatient, int knop) {
+
+
+        Patient.PatientEditor.editeData(huidigPatient);
         terugknop(knop);
     }
      static void bmiStatus() {
 
         verwijderScherm();
         double bmi;
-        bmi = huidigPersoon.gewicht / ((huidigPersoon.lengte / 100)*(huidigPersoon.lengte / 100));
+        bmi = huidigPatient.gewicht / ((huidigPatient.lengte / 100)*(huidigPatient.lengte / 100));
 
         if (bmi < 18.5)
         {System.out.println("U heeft ondergewicht:\n");}
