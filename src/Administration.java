@@ -6,7 +6,7 @@ class Administration {
     String geidentificeerd = "\nU bent succesvol geïdentificeerd als een: ";
     static String gegvam = "\nHierbij de gegevens van: ";
 
-    private static Patient huidigPatient;
+    static Patient huidigPatient;
 
     Patient Lisa = new Patient(71, "Lisa", "Jansen", 12, 11, 1994, 65, 170, medicatie.paracetamol, 150);
     Patient Thomas = new Patient(14, "Thomas", "De Vries", 5, 6, 1988, 80, 185, medicatie.aspirine, 100);
@@ -81,27 +81,44 @@ class Administration {
     }
 
     void fysiotherapeut() {
-        huidigepassent("Fysiotherapeut");
+        patientSelect("Fysiotherapeut");
+        Fysiotherapeut fysiotherapeut = new Fysiotherapeut(huidigPatient);
+
         printGegevensEdite(huidigPatient, 1);
+        fysiotherapeut.printPatientGegevens();
+        printGegevens(huidigPatient, 1);
     }
 
     void huisarts() {
-        huidigepassent("Huisarts");
+
+        patientSelect("Huisarts");
+        Huisarts huisarts = new Huisarts(huidigPatient); // omdat huisarts niet static is en niet kan worden moet je het op deze manier aanpakken
+
         printGegevensEdite(huidigPatient, 2);
+        huisarts.printPatientGegevens();
+        printGegevens(huidigPatient, 2);
     }
 
     void apotheker() {
-        huidigepassent("Apotheker");
+        patientSelect("Apotheker");
+        Apotheker apotheker = new Apotheker(huidigPatient);
+
         printGegevensEdite(huidigPatient, 3);
+        apotheker.printPatientGegevens();
+        printGegevens(huidigPatient, 3);
+
     }
 
     void tandarts() {
-        huidigepassent("Tandarts");
+        patientSelect("Tandarts");
+        Tandarts tandarts = new Tandarts(huidigPatient);
+
         printGegevensEdite(Administration.huidigPatient, 4);
-        Tandarts.printGegevens();
+        tandarts.printPatientGegevens();
+        printGegevens(huidigPatient, 4);
     }
 
-    void huidigepassent(String functie) {
+    void patientSelect(String functie) {
 
         Scanner Fscan = new Scanner(System.in);
         String antwoordt = "";
@@ -117,6 +134,7 @@ class Administration {
             case "32" -> huidigPatient = Sophia;
             case "19" -> huidigPatient = Amir;
             case "10" -> huidigPatient = Elena;
+
         }
 
     }
@@ -126,11 +144,9 @@ class Administration {
 
         verwijderScherm();
         System.out.println(gegvam + huidigPatient.voornaam);
-      huidigPatient.printGegevens();
 
     }
     public void printGegevens(Patient huidigPatient, int knop) {
-
 
         Patient.PatientEditor.editeData(huidigPatient);
         terugknop(knop);

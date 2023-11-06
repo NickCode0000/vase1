@@ -1,13 +1,17 @@
-public class Tandarts extends Patient {
 
 
-    public Tandarts(int id, String voornaam, String achternaam, int day, int month, int year, int gewicht, int lengte, medicatie medicatie, int dose) {
-        super(id, voornaam, achternaam, day, month, year, gewicht, lengte, medicatie, dose);
+public class Tandarts extends Hulpverleners {
+
+    public Tandarts(Patient huidigPatient) {
+        super(huidigPatient);
     }
 
+    public void printPatientGegevens() {
 
-    void printGegevens(Patient patient) {
-        super.printGegevens(Patient patient);
+        printGegevens(); // algemene info
 
     }
 }
+
+
+

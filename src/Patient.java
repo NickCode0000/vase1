@@ -33,14 +33,18 @@ public class Patient {
 
     void bmiberekenen() {System.out.println("BMI:\t\t\t" + this.gewicht / (this.lengte / 100) + " kg/m²");}
 
-    void printGegevens() {
-        System.out.printf("%-15s %d\n",         "id:", id);
-        System.out.printf("%-15s %s\n",         "Naam:", voornaam);
-        System.out.printf("%-15s %s\n",         "Achternaam:", achternaam);
-        System.out.printf("%-15s %b\n",         "Geboortedatum:", dateOfBirth);
-        System.out.printf("%-15s %d jaar\n",    "Leeftijd", Period.between(dateOfBirth, today).getYears());
-
-    }
+//     void printGegevens() {
+//       System.out.printf("%-15s %d\n",         "id:", id);
+//       System.out.printf("%-15s %s\n",         "Naam:", voornaam);
+//        System.out.printf("%-15s %s\n",         "Achternaam:", achternaam);
+//       System.out.printf("%-15s %b\n",         "Geboortedatum:", dateOfBirth);
+//       System.out.printf("%-15s %d jaar\n",    "Leeftijd", Period.between(dateOfBirth, today).getYears());
+//
+////       System.out.printf("%-15s %s %d mg\n", "medicatie:", this.medicatie, this.dose);
+////       System.out.printf("%-15s %.1f kg/m²\n", "BMI:", this.gewicht / ((this.lengte / 100) * (this.lengte / 100)));
+////       System.out.printf("%-15s %.0f kg\n", "gewicht:", this.gewicht);
+////       System.out.printf("%-15s %.0f cm\n", "Lengte:", this.lengte);
+//   }
 
     void gegevenshuisarts() {
 
@@ -167,7 +171,7 @@ public class Patient {
         private static void printNieuweGegevens(Patient huidigPatient) {
             Administration.verwijderScherm();
             System.out.println("Hier komen de nieuwe gegevens:\n");
-            huidigPatient.printGegevens();
+//            Hulpverleners.printGegevens();
 
         }
     }

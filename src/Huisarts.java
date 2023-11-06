@@ -1,16 +1,24 @@
-public class Huisarts extends Patient {
 
 
-    public Huisarts(int id, String voornaam, String achternaam, int day, int month, int year, int gewicht, int lengte, medicatie medicatie, int dose) {
-        super(id, voornaam, achternaam, day, month, year, gewicht, lengte, medicatie, dose);
+public class Huisarts extends Hulpverleners {
+
+    public Huisarts(Patient huidigPatient) {
+        super(huidigPatient);
     }
 
-    void printGegevens() {
-        super.printGegevens();
+    public void printPatientGegevens() {
 
-        System.out.printf("%-15s %s %d mg\n", "medicatie:", this.medicatie, this.dose);
-        System.out.printf("%-15s %.1f kg/m²\n", "BMI:", this.gewicht / ((this.lengte / 100) * (this.lengte / 100)));
-        System.out.printf("%-15s %.0f kg\n", "gewicht:", this.gewicht);
-        System.out.printf("%-15s %.0f cm\n", "Lengte:", this.lengte);
+        printGegevens(); // algemene info
+        huisartSpecafiek(); // info alleen voor huisart
+    }
+
+    public void huisartSpecafiek() {
+
+    // Aanvullende print specifiek voor de huisarts
+    System.out.printf("%-15s %s %d mg\n","medicatie:", huidigPatient.medicatie, huidigPatient.dose);
+    System.out.printf("%-15s %.1f kg/m²\n","BMI:", huidigPatient.gewicht /((huidigPatient.lengte /100)*(huidigPatient.lengte /100)));
+    System.out.printf("%-15s %.0f kg\n","gewicht:", huidigPatient.gewicht);
+    System.out.printf("%-15s %.0f cm\n","Lengte:", huidigPatient.lengte);
     }
 }
+
