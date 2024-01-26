@@ -106,7 +106,6 @@ class Administration {
         printGegevensEdite(huidigPatient);
         apotheker.printPatientGegevens();
         printGegevens(huidigPatient, 3, "Apotheker");
-
     }
 
     void tandarts() {
@@ -134,7 +133,6 @@ class Administration {
             case "32" -> huidigPatient = Sophia;
             case "19" -> huidigPatient = Amir;
             case "10" -> huidigPatient = Elena;
-
         }
 
     }
