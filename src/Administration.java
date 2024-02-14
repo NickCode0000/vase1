@@ -83,7 +83,6 @@ class Administration {
     void fysiotherapeut() {
         patientSelect("Fysiotherapeut");
         Fysiotherapeut fysiotherapeut = new Fysiotherapeut(huidigPatient);
-
         printGegevensEdite(huidigPatient);
         fysiotherapeut.printPatientGegevens();
         printGegevens(huidigPatient, 1, "Fysiotherapeut");
@@ -134,7 +133,6 @@ class Administration {
             case "19" -> huidigPatient = Amir;
             case "10" -> huidigPatient = Elena;
         }
-
     }
 
 

@@ -28,7 +28,6 @@ public class Patient {
         System.out.println(this.id + ":\t" + this.voornaam + " " + this.achternaam);
     }
 
-
     public void editeName(String newVoornaam) {
         this.voornaam = newVoornaam;
     }
